@@ -201,7 +201,7 @@
     padding:170px 0 80px;position:relative;perspective:1200px;
     background:
       linear-gradient(180deg, rgba(11,23,64,.55) 0%, rgba(11,23,64,.35) 40%, rgba(11,23,64,.6) 100%),
-      url('hero-bg.png') center center / cover no-repeat;
+      url('/hero-bg.webp') center center / cover no-repeat;
   }
   .hero::before{
     content:"";position:absolute;inset:0;
@@ -1747,7 +1747,7 @@
 .hero::before{content:"";position:absolute;inset:0;
   background:
     linear-gradient(180deg, rgba(244,247,255,.92) 0%, rgba(244,247,255,.78) 35%, rgba(244,247,255,.55) 60%, rgba(244,247,255,.85) 100%),
-    url("assets/hero-facility.png") center 30%/cover no-repeat;
+    url("/hero-bg.webp") center 30%/cover no-repeat;
   pointer-events:none;z-index:0;animation:hero-bg-pan 30s ease-in-out infinite alternate}
 .hero > *{position:relative;z-index:2}
 @keyframes hero-bg-pan{from{background-position:50% 26%, 50% 26%}to{background-position:50% 34%, 50% 34%}}

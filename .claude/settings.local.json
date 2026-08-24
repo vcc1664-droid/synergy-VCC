@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:vcc-react.vercel.app)",
+      "Bash(grep -o '#si-root.\\\\{0,2000\\\\}' \"c:/Users/gs278/Desktop/vcc-react/dist/assets/index-BOY436Rk.css\")",
+      "Bash(curl -s \"https://vcc-react.vercel.app/\")",
+      "Bash(curl -s \"https://vcc-react.vercel.app/assets/index-CNfPo5B5.css\")",
+      "Bash(grep -o '#si-root.\\\\{0,500\\\\}')"
+    ]
+  }
+}

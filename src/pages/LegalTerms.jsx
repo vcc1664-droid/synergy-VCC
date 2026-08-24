@@ -103,7 +103,7 @@ export default function LegalTerms() {
         <div className="wrap" style={{ maxWidth:820 }}>
           {SECTIONS.map((s) => (
             <div key={s.title} style={{ marginBottom:48 }}>
-              <h2 style={{ fontFamily:"'Satoshi',system-ui,sans-serif",fontWeight:700,fontSize:'clamp(20px,2.4vw,28px)',letterSpacing:'-.02em',color:'var(--navy)',marginBottom:16 }}>
+              <h2 style={{ fontFamily:"'Satoshi',system-ui,sans-serif",fontWeight:700,fontSize:'clamp(20px,2.4vw,28px)',letterSpacing:'-.02em',color:'var(--navy)',marginBottom:16}}>
                 {s.title}y
               </h2>
               {s.body.map((p, i) => (

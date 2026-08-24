@@ -83,7 +83,7 @@ export default function LegalTerms() {
     <>
       <Helmet>
         <title>Legal Terms — Versailles Cold Chain</title>
-        <meta name="description" content="Terms and conditions governing the use of the Versailles Cold Chain website and services." />
+        <meta name="description" content="Terms and conditions governing the use of the Versailles Cold Chain website and services."/>
       </Helmet>
 
       <section className="page-hero svc-hero" style={{ textAlign: 'center' }}>

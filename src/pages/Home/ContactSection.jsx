@@ -14,8 +14,7 @@ const RULES = {
     const digits = v.replace(/\D/g, '')
     if (!v.trim()) return 'Phone number is required'
     if (digits.length < 7)  return 'Enter a valid phone number'
-    if (digits.length > 15) return 'Phone number is too long'
-    if (!/^[\d\s\+\-\(\)]+$/.test(v.trim())) return 'Enter a valid phone number'
+    if (digits.length > 12) return 'Phone number cannot exceed 12 digits'
     return ''
   },
   cargo: v => !v ? 'Please select a cargo type' : '',
@@ -30,6 +29,7 @@ export default function ContactSection() {
   const [sent,    setSent]    = useState(false)
   const [loading, setLoading] = useState(false)
   const [submitErr, setSubmitErr] = useState(false)
+  const [submitErrMsg, setSubmitErrMsg] = useState('')
 
   const validate = (field, value) => RULES[field] ? RULES[field](value) : ''
 
@@ -61,16 +61,39 @@ export default function ContactSection() {
 
     setLoading(true)
     setSubmitErr(false)
+    setSubmitErrMsg('')
+
     try {
-      const params = new URLSearchParams(values)
-      await fetch(SHEET_URL, { method: 'POST', body: params, mode: 'no-cors' })
+      const payload = {
+        name: values.name,
+        company: values.company,
+        workEmail: values.email,
+        contactNumber: values.phone,
+        cargoType: values.cargo,
+        volumePerMonth: values.volume,
+        requirements: values.need,
+      }
+
+      const res = await fetch('/api/request-quote', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      })
+
+      const data = await res.json()
+
+      if (!res.ok || !data.success) {
+        throw new Error(data.error || 'Submission failed')
+      }
+
       setSent(true)
       setValues(INIT)
       setTouched({})
       setErrors({})
-      setTimeout(() => setSent(false), 5000)
-    } catch {
+      setTimeout(() => setSent(false), 7000)
+    } catch (err) {
       setSubmitErr(true)
+      setSubmitErrMsg(err.message || 'Something went wrong — please try again or email us directly.')
     } finally {
       setLoading(false)
     }
@@ -137,9 +160,14 @@ export default function ContactSection() {
                 {field('phone', 'CONTACT NUMBER', true,
                   <input id="f-phone" name="phone" type="tel" autoComplete="tel"
                     value={values.phone}
-                    onChange={e => handleChange('phone', e.target.value)}
+                    onChange={e => {
+                      const digitsOnly = e.target.value.replace(/\D/g, '')
+                      if (digitsOnly.length <= 12) {
+                        handleChange('phone', digitsOnly)
+                      }
+                    }}
                     onBlur={() => handleBlur('phone')}
-                    placeholder="+91 XXXXX XXXXX"
+                    placeholder="9988118803"
                   />
                 )}
               </div>
@@ -184,8 +212,8 @@ export default function ContactSection() {
               )}
 
               {submitErr && (
-                <p style={{ color: '#ff6b6b', fontSize: 13, margin: '12px 0 0' }}>
-                  Something went wrong — please try again or email us directly.
+                <p style={{ color: '#ff6b6b', fontSize: 13, margin: '12px 0 0', lineHeight: 1.5 }}>
+                  {submitErrMsg || 'Something went wrong — please try again or email us directly.'}
                 </p>
               )}
 
@@ -199,8 +227,8 @@ export default function ContactSection() {
                     stroke="#0a8f4f" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M5 13l4 4L19 7"/>
                   </svg>
-                  <span style={{ fontSize: 13.5, color: 'rgba(255,255,255,.8)' }}>
-                    Request sent! Our team will reach out within 24 hours.
+                  <span style={{ fontSize: 13.5, color: 'rgba(255,255,255,.9)', fontWeight: 500 }}>
+                    Thank you! Your request has been submitted successfully.
                   </span>
                 </div>
               )}

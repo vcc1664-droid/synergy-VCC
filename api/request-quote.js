@@ -1,8 +1,4 @@
-import dotenv from 'dotenv'
-
-dotenv.config()
-
-export default async function handler(req, res) {
+module.exports = async function handler(req, res) {
   // CORS Headers for Vercel Serverless Functions
   res.setHeader('Access-Control-Allow-Credentials', 'true')
   res.setHeader('Access-Control-Allow-Origin', '*')

@@ -62,6 +62,7 @@ export default async function handler(req, res) {
     const rawDbId = process.env.NOTION_DATABASE_ID
 
     if (!notionApiKey || !rawDbId) {
+      console.error(`[VCC API Config Error] NOTION_API_KEY present: ${Boolean(notionApiKey)}, NOTION_DATABASE_ID present: ${Boolean(rawDbId)}`)
       return res.status(500).json({
         success: false,
         error: 'Server configuration error: NOTION_API_KEY or NOTION_DATABASE_ID is missing in environment.',

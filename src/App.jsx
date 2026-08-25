@@ -1,5 +1,5 @@
 import { Suspense, lazy, useEffect, useRef } from 'react'
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom'
 import Navigation from './components/Navigation'
 import Footer from './components/Footer'
 import WhatsAppButton from './components/WhatsAppButton'
@@ -12,6 +12,16 @@ const Facilities    = lazy(() => import('./pages/Facilities'))
 const Edge          = lazy(() => import('./pages/Edge'))
 const PrivacyPolicy = lazy(() => import('./pages/PrivacyPolicy'))
 const LegalTerms    = lazy(() => import('./pages/LegalTerms'))
+
+function ScrollToTop() {
+  const { pathname } = useLocation()
+
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [pathname])
+
+  return null
+}
 
 function SnowEffect() {
   const canvasRef = useRef(null)
@@ -68,6 +78,7 @@ function SnowEffect() {
 export default function App() {
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <Loader />
       <Navigation />
       <SnowEffect />

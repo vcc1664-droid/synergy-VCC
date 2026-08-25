@@ -2,11 +2,11 @@ import { useState, useEffect } from 'react'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
 
 const NAV_LINKS = [
-  { to: '/', label: 'Home', newTab: false },
-  { to: '/about', label: 'About', newTab: true },
-  { to: '/services', label: 'Services', newTab: true },
-  { to: '/facilities', label: 'Facilities', newTab: true },
-  { to: '/edge', label: 'VCC Edge', newTab: true },
+  { to: '/', label: 'Home' },
+  { to: '/about', label: 'About' },
+  { to: '/services', label: 'Services' },
+  { to: '/facilities', label: 'Facilities' },
+  { to: '/edge', label: 'VCC Edge' },
 ]
 
 export default function Navigation() {
@@ -62,13 +62,11 @@ export default function Navigation() {
           <b>VERSAILLES COLD CHAIN</b>
         </Link>
         <ul>
-          {NAV_LINKS.map(({ to, label, newTab }) => (
+          {NAV_LINKS.map(({ to, label }) => (
             <li key={to}>
               <Link
                 to={to}
                 className={isActive(to) ? 'on' : ''}
-                target={newTab ? '_blank' : undefined}
-                rel={newTab ? 'noopener noreferrer' : undefined}
                 data-link={to.replace('/', '') || 'home'}
                 onClick={to === '/' ? scrollTop : undefined}
               >
@@ -96,13 +94,11 @@ export default function Navigation() {
       </nav>
 
       <div className={`nav-drawer${open ? ' open' : ''}`} id="navDrawer">
-        {NAV_LINKS.map(({ to, label, newTab }) => (
+        {NAV_LINKS.map(({ to, label }) => (
           <Link
             key={to}
             to={to}
             className={isActive(to) ? 'on' : ''}
-            target={newTab ? '_blank' : undefined}
-            rel={newTab ? 'noopener noreferrer' : undefined}
             onClick={() => {
               setOpen(false)
               document.body.style.overflow = ''

@@ -294,14 +294,6 @@ function ProbeGrid() {
   )
 }
 
-function handleContactClick(e) {
-  e.preventDefault()
-  window.location.hash = '#/'
-  setTimeout(() => {
-    document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })
-  }, 100)
-}
-
 const EH_SLIDER_STYLES = `
   .eh-stats-slider {
     position: relative;

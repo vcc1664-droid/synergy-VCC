@@ -30,6 +30,7 @@ export default function ContactSection() {
   const [sent,    setSent]    = useState(false)
   const [loading, setLoading] = useState(false)
   const [submitErr, setSubmitErr] = useState(false)
+  const [submitErrMsg, setSubmitErrMsg] = useState('')
 
   const validate = (field, value) => RULES[field] ? RULES[field](value) : ''
 
@@ -61,16 +62,39 @@ export default function ContactSection() {
 
     setLoading(true)
     setSubmitErr(false)
+    setSubmitErrMsg('')
+
     try {
-      const params = new URLSearchParams(values)
-      await fetch(SHEET_URL, { method: 'POST', body: params, mode: 'no-cors' })
+      const payload = {
+        name: values.name,
+        company: values.company,
+        workEmail: values.email,
+        contactNumber: values.phone,
+        cargoType: values.cargo,
+        volumePerMonth: values.volume,
+        requirements: values.need,
+      }
+
+      const res = await fetch('/api/request-quote', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      })
+
+      const data = await res.json()
+
+      if (!res.ok || !data.success) {
+        throw new Error(data.error || 'Submission failed')
+      }
+
       setSent(true)
       setValues(INIT)
       setTouched({})
       setErrors({})
-      setTimeout(() => setSent(false), 5000)
-    } catch {
+      setTimeout(() => setSent(false), 7000)
+    } catch (err) {
       setSubmitErr(true)
+      setSubmitErrMsg(err.message || 'Something went wrong — please try again or email us directly.')
     } finally {
       setLoading(false)
     }

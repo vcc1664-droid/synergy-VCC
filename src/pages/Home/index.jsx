@@ -26,7 +26,7 @@ export default function Home() {
       <Helmet>
         <title>Versailles Cold Chain — Cold Storage & Temperature-Controlled Logistics</title>
         <meta name="description" content="Enterprise cold storage and temperature-controlled logistics in Punjab. FSSAI · ISO 22000 · GDP certified. Zero excursions, full traceability." />
-        <link rel="canonical" href="https://versaillecoldchain.com/" />
+        <link rel="canonical" href="https://www.versaillescoldchain.com/" />
       </Helmet>
 
       <HeroSection />

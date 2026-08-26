@@ -79,19 +79,19 @@ export default function Footer() {
             <div>
               <h3>Services</h3>
               <ul>
-                <li><Link to="/services" target="_blank" rel="noopener noreferrer">Storage &amp; Warehousing</Link></li>
-                <li><Link to="/services" target="_blank" rel="noopener noreferrer">Transportation &amp; Distribution</Link></li>
-                <li><Link to="/services" target="_blank" rel="noopener noreferrer">Inventory Management</Link></li>
-                <li><Link to="/services" target="_blank" rel="noopener noreferrer">Value-Added Services</Link></li>
-                <li><Link to="/services" target="_blank" rel="noopener noreferrer">Supply Chain Solutions</Link></li>
-                <li><Link to="/services" target="_blank" rel="noopener noreferrer">Technology &amp; Visibility</Link></li>
+                <li><Link to="/services">Storage &amp; Warehousing</Link></li>
+                <li><Link to="/services">Transportation &amp; Distribution</Link></li>
+                <li><Link to="/services">Inventory Management</Link></li>
+                <li><Link to="/services">Value-Added Services</Link></li>
+                <li><Link to="/services">Supply Chain Solutions</Link></li>
+                <li><Link to="/services">Technology &amp; Visibility</Link></li>
               </ul>
             </div>
             <div>
               <h3>Company</h3>
               <ul>
-                <li><Link to="/about" target="_blank" rel="noopener noreferrer">About</Link></li>
-                <li><Link to="/facilities" target="_blank" rel="noopener noreferrer">Network</Link></li>
+                <li><Link to="/about">About</Link></li>
+                <li><Link to="/facilities">Network</Link></li>
                 <li><a href="#certs" onClick={scrollTo('certs')}>Certifications</a></li>
               </ul>
             </div>
@@ -132,8 +132,6 @@ export default function Footer() {
                   <Link
                     key={to}
                     to={to}
-                    target="_blank"
-                    rel="noopener noreferrer"
                     style={{ color: 'rgba(7,15,48,.4)', textTransform: 'uppercase', letterSpacing: '.01em', fontSize: '11px', transition: 'color .2s' }}
                     onMouseEnter={e => e.currentTarget.style.color = '#070f30'}
                     onMouseLeave={e => e.currentTarget.style.color = 'rgba(7,15,48,.4)'}

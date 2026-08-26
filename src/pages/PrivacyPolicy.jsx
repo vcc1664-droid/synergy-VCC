@@ -84,7 +84,7 @@ export default function PrivacyPolicy() {
       <section className="page-hero svc-hero" style={{ textAlign: 'center' }}>
         <div className="wrap" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', maxWidth: 1000, margin: '0 auto', paddingTop: 'clamp(70px,10vw,100px)', paddingBottom: 'clamp(40px,6vw,80px)' }}>
          
-          <h1 style={{ maxWidth: 'none' }}>
+          <h1 style={{ maxWidth: 'none' }} data-anim="up">
             <span className="hline">Your data,</span>
             <span className="hline"><span className="accent">protected.</span></span>
           </h1>

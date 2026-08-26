@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { Helmet } from 'react-helmet-async'
 import { Link } from 'react-router-dom'
+import { smoothScrollToEl } from '../utils/smoothScroll'
 
 const EH_CARDS = [
   {
@@ -297,9 +298,7 @@ function ProbeGrid() {
 function handleContactClick(e) {
   e.preventDefault()
   window.location.hash = '#/'
-  setTimeout(() => {
-    document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })
-  }, 100)
+  setTimeout(() => smoothScrollToEl('contact'), 100)
 }
 
 const EH_SLIDER_STYLES = `
@@ -478,7 +477,7 @@ export default function Edge() {
           {/* Sub-heading — facility descriptor */}
           <p className="edge-hero-sub">One of North India's Largest Facilities Beyond NCR</p>
           {/* Main heading */}
-          <h1>Built for Scale. Designed for Growth.</h1>
+          <h1 data-anim="up">Built for Scale. Designed for Growth.</h1>
           {/* Temperature sub-heading */}
           <p className="lede">Temperature Range: &minus;25°C to +5°C</p>
 
@@ -502,7 +501,7 @@ export default function Edge() {
       {/* Section heading */}
       <section className="sec" style={{ padding: '30px 0 60px' }}>
         <div className="wrap">
-          <h2 className="sec-title" style={{ margin: '14px 0 14px' }}>
+          <h2 className="sec-title" data-anim="up" style={{ margin: '14px 0 14px' }}>
             <span className="hline">Eight systems,</span>
             <span className="hline">one <span className="accent">unbroken curve.</span></span>
           </h2>
@@ -516,7 +515,7 @@ export default function Edge() {
       <section className="sec" style={{ padding: '0 0 80px' }}>
         <div className="wrap">
           {EDGE_ROWS.map((row) => (
-            <div className="edge-row" key={row.num}>
+            <div className="edge-row" data-anim="up" key={row.num}>
               <div className="er-num">{row.num}</div>
               <div className="er-content">
                 <span className="er-eyebrow">{row.eyebrow}</span>
@@ -545,7 +544,7 @@ export default function Edge() {
       {/* CTA */}
       <section className="sec" style={{ padding: '60px 0 120px', background: '#070f30', borderRadius: 24, margin: '0 24px' }}>
         <div className="wrap" style={{ textAlign: 'center', maxWidth: 780, margin: '0 auto' }}>
-          <h2 className="sec-title" style={{ margin: '14px auto 0', color: '#fff' }}>
+          <h2 className="sec-title" data-anim="up" style={{ margin: '14px auto 0', color: '#fff' }}>
             <span className="hline">Every Pallet.</span>
             <span className="hline">Perfectly Preserved.</span>
           </h2>

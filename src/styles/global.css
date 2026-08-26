@@ -35,6 +35,21 @@
   body{margin:0;padding:0;background:var(--paper);color:var(--navy);font-family:var(--body);overflow-x:hidden}
   a{color:inherit;text-decoration:none}
 
+  /* ── GSAP ScrollSmoother wrapper ──
+     Only takes effect once JS attaches .has-smooth-scroll to <html>
+     (ScrollSmoother.create() succeeded). Until then #smooth-wrapper/
+     #smooth-content are plain unstyled divs so content scrolls and
+     paints natively — safe fallback for reduced-motion users and the
+     brief moment before JS mounts. */
+  html.has-smooth-scroll{ height:100% }
+  html.has-smooth-scroll body{ height:100% }
+  html.has-smooth-scroll #smooth-wrapper{
+    position:fixed;inset:0;overflow:hidden;width:100%;height:100%;
+  }
+  html.has-smooth-scroll #smooth-content{
+    overflow:visible;width:100%;max-width:100%;
+  }
+
   /* Ambient backdrop — disabled (clean white/dark theme) */
   .ambient{display:none}
   .grid-bg{display:none}

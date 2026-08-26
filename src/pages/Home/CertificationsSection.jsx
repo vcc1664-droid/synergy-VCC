@@ -3,7 +3,7 @@ export default function CertificationsSection() {
     <section className="sec dark-sec" id="certs" style={{ padding: '90px 0 120px', position: 'relative' }}>
       <div className="wrap">
         <div style={{ textAlign: 'center', maxWidth: 760, margin: '0 auto' }}>
-          <h2 className="sec-title" style={{ margin: '18px auto 0', whiteSpace: 'nowrap', fontSize: 'clamp(28px,4.5vw,64px)' }}>
+          <h2 className="sec-title" data-anim="up" style={{ margin: '18px auto 0', whiteSpace: 'nowrap', fontSize: 'clamp(28px,4.5vw,64px)' }}>
             Certified, audited, accredited.<span style={{ fontSize: '0.55em', verticalAlign: 'super', letterSpacing: 0 }}>*</span>
           </h2>
           <p className="sec-sub" style={{ margin: '24px auto 0', maxWidth: 620 }}>
@@ -11,8 +11,8 @@ export default function CertificationsSection() {
           </p>
         </div>
 
-        <div className="certs-grid">
-          <div className="cert">
+        <div className="certs-grid" data-anim-group>
+          <div className="cert" data-anim="scale">
             <div className="medal">
               <div className="medal-inner">
                 <div className="cert-fssai">f<em>s</em>s<em>a</em><i>i</i></div>
@@ -22,7 +22,7 @@ export default function CertificationsSection() {
             <h5>FSSAI</h5>
           </div>
 
-          <div className="cert">
+          <div className="cert" data-anim="scale">
             <div className="medal">
               <div className="medal-inner">
                 <div className="cert-iso22">
@@ -40,7 +40,7 @@ export default function CertificationsSection() {
             <h5>ISO 22000</h5>
           </div>
 
-          <div className="cert">
+          <div className="cert" data-anim="scale">
             <div className="medal">
               <div className="medal-inner">
                 <div className="cert-iso14">
@@ -60,7 +60,7 @@ export default function CertificationsSection() {
             <h5>ISO 14001</h5>
           </div>
 
-          <div className="cert">
+          <div className="cert" data-anim="scale">
             <div className="medal">
               <div className="medal-inner">
                 <div className="cert-eic">
@@ -73,7 +73,7 @@ export default function CertificationsSection() {
             <h5>Export Inspection</h5>
           </div>
 
-          <div className="cert">
+          <div className="cert" data-anim="scale">
             <div className="medal">
               <div className="medal-inner">
                 <div className="cert-brc">
@@ -90,7 +90,7 @@ export default function CertificationsSection() {
             <h5>BRC Global</h5>
           </div>
 
-          <div className="cert">
+          <div className="cert" data-anim="scale">
             <div className="medal">
               <div className="medal-inner">
                 <div className="cert-sgs">

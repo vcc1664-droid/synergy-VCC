@@ -5,6 +5,8 @@ import Footer from './components/Footer'
 import WhatsAppButton from './components/WhatsAppButton'
 import Loader from './components/Loader'
 import Home from './pages/Home'
+import useSmoothScroll from './hooks/useSmoothScroll'
+import useScrollReveal from './hooks/useScrollReveal'
 
 const About         = lazy(() => import('./pages/About'))
 const Services      = lazy(() => import('./pages/Services'))
@@ -65,26 +67,37 @@ function SnowEffect() {
   )
 }
 
+function ScrollController() {
+  useSmoothScroll()
+  useScrollReveal()
+  return null
+}
+
 export default function App() {
   return (
     <BrowserRouter>
       <Loader />
       <Navigation />
       <SnowEffect />
-      <main id="main-content">
-        <Suspense fallback={<div style={{ minHeight: '100vh', background: '#070f30' }} />}>
-          <Routes>
-            <Route path="/"          element={<Home />} />
-            <Route path="/about"     element={<About />} />
-            <Route path="/services"  element={<Services />} />
-            <Route path="/facilities" element={<Facilities />} />
-            <Route path="/edge"           element={<Edge />} />
-            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-            <Route path="/legal-terms"    element={<LegalTerms />} />
-          </Routes>
-        </Suspense>
-      </main>
-      <Footer />
+      <ScrollController />
+      <div id="smooth-wrapper">
+        <div id="smooth-content">
+          <main id="main-content">
+            <Suspense fallback={<div style={{ minHeight: '100vh', background: '#070f30' }} />}>
+              <Routes>
+                <Route path="/"          element={<Home />} />
+                <Route path="/about"     element={<About />} />
+                <Route path="/services"  element={<Services />} />
+                <Route path="/facilities" element={<Facilities />} />
+                <Route path="/edge"           element={<Edge />} />
+                <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+                <Route path="/legal-terms"    element={<LegalTerms />} />
+              </Routes>
+            </Suspense>
+          </main>
+          <Footer />
+        </div>
+      </div>
       <WhatsAppButton />
     </BrowserRouter>
   )

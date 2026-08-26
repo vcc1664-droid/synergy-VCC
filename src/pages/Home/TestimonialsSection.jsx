@@ -215,7 +215,7 @@ export default function TestimonialsSection() {
 
       <section className="sec" id="stories">
         <div className="wrap">
-          <h2 className="sec-title">
+          <h2 className="sec-title" data-anim="up">
             <span className="hline">Your Trust. Our Pallet.</span>
           </h2>
         </div>

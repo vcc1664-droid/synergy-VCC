@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
+import { smoothScrollToEl, smoothScrollToTop } from '../utils/smoothScroll'
 
 const NAV_LINKS = [
   { to: '/', label: 'Home' },
@@ -37,11 +38,9 @@ export default function Navigation() {
     e.preventDefault()
     if (location.pathname !== '/') {
       navigate('/')
-      setTimeout(() => {
-        document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })
-      }, 350)
+      setTimeout(() => smoothScrollToEl('contact'), 350)
     } else {
-      document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })
+      smoothScrollToEl('contact')
     }
     setOpen(false)
     document.body.style.overflow = ''
@@ -52,7 +51,7 @@ export default function Navigation() {
     return location.pathname.startsWith(to)
   }
 
-  const scrollTop = () => window.scrollTo({ top: 0, behavior: 'smooth' })
+  const scrollTop = () => smoothScrollToTop()
 
   return (
     <>
@@ -102,7 +101,7 @@ export default function Navigation() {
             onClick={() => {
               setOpen(false)
               document.body.style.overflow = ''
-              if (to === '/') window.scrollTo({ top: 0, behavior: 'smooth' })
+              if (to === '/') smoothScrollToTop()
             }}
           >
             {label}

@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { Link, useNavigate, useLocation } from 'react-router-dom'
+import { smoothScrollToEl } from '../utils/smoothScroll'
 
 export default function Footer() {
   const navigate = useNavigate()
@@ -23,9 +24,9 @@ export default function Footer() {
     e.preventDefault()
     if (location.pathname !== '/') {
       navigate('/')
-      setTimeout(() => document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' }), 350)
+      setTimeout(() => smoothScrollToEl(id), 350)
     } else {
-      document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
+      smoothScrollToEl(id)
     }
   }
 

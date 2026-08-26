@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react'
 import { Helmet } from 'react-helmet-async'
 import { Link, useNavigate } from 'react-router-dom'
+import { smoothScrollToEl } from '../utils/smoothScroll'
 
 const ROADMAP = [
   {
@@ -219,9 +220,7 @@ export default function About() {
   const goToContact = (e) => {
     e.preventDefault()
     navigate('/')
-    setTimeout(() => {
-      document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })
-    }, 350)
+    setTimeout(() => smoothScrollToEl('contact'), 350)
   }
 
   return (
@@ -234,7 +233,7 @@ export default function About() {
       <section className="page-hero about-ph">
         <div className="wrap about-ph-grid">
           <div className="about-ph-text">
-            <h1>
+            <h1 data-anim="up">
               <span className="hline">Preserving Freshness.</span>
               <span className="hline"><span className="accent">Powering Possibilities.</span></span>
             </h1>
@@ -249,12 +248,12 @@ export default function About() {
       <section className="sec roadmap-section" id="roadmap">
         <div className="wrap">
           <div className="rm-head">
-            <h2 className="sec-title" style={{ whiteSpace: 'normal' }}>Development Pipeline.</h2>
+            <h2 className="sec-title" data-anim="up" style={{ whiteSpace: 'normal' }}>Development Pipeline.</h2>
             <p className="sec-sub">From land acquisition to a fully operational enterprise-grade cold chain facility.</p>
           </div>
-          <div className="roadmap">
+          <div className="roadmap" data-anim-group>
             {ROADMAP.map((step, i) => (
-              <div className="rm-step" key={i}>
+              <div className="rm-step" data-anim="up" key={i}>
                 <div className="rm-badge">{step.icon}</div>
                 {i < ROADMAP.length - 1 && <span className="rm-chevron">&raquo;</span>}
                 <div className="rm-date">{step.date}</div>
@@ -273,7 +272,7 @@ export default function About() {
         <div className="wrap">
           <div className="manifesto">
             <div className="manifesto-inner">
-              <div className="mf-left">
+              <div className="mf-left" data-anim="up">
                 <span className="eye">Our Manifesto</span>
                 <h2 className="mf-headline">
                   <span className="hline">We don&rsquo;t just store your cargo.</span>
@@ -311,7 +310,7 @@ export default function About() {
       <section className="sec" style={{ paddingTop: 40 }}>
         <div className="wrap">
           <div className="sus-values-wrap">
-            <h2 className="sec-title">
+            <h2 className="sec-title" data-anim="up">
               <span className="hline">Trusted to protect</span>
               <span className="hline">what matters.</span>
               <span className="hline"><span className="accent">Every degree. Every time.</span></span>

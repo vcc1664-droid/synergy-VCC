@@ -227,7 +227,7 @@ export default function Facilities() {
       {/* Hero */}
       <section className="page-hero fac-hero-sec" style={{ textAlign: 'center' }}>
         <div className="wrap" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', maxWidth: 1000, margin: '0 auto', paddingTop: 'clamp(70px,10vw,100px)', paddingBottom: 0 }}>
-          <h1 style={{ maxWidth: 'none' }}>
+          <h1 style={{ maxWidth: 'none' }} data-anim="up">
             <span className="hline">Pallet positions,</span>
             <span className="hline"><span className="accent">precision-engineered.</span></span>
           </h1>
@@ -248,7 +248,7 @@ export default function Facilities() {
       {/* Zones */}
       <section className="sec" style={{ padding: '60px 0 40px' }}>
         <div className="wrap">
-          <h2 className="sec-title" style={{ margin: '14px 0 14px' }}>
+          <h2 className="sec-title" data-anim="up" style={{ margin: '14px 0 14px' }}>
             <span className="hline">Four temperature zones,</span>
             <span className="hline"><span className="accent">one cold floor.</span></span>
           </h2>
@@ -257,9 +257,9 @@ export default function Facilities() {
           </p>
 
           <div className="fac-zones">
-            <div className="fac-zones-grid">
+            <div className="fac-zones-grid" data-anim-group>
               {ZONES.map((z) => (
-                <div className={`fac-zone ${z.cls}`} key={z.cls}>
+                <div className={`fac-zone ${z.cls}`} data-anim="up" key={z.cls}>
                   <div>
                     <div className="ztemp">{z.temp}</div>
                     <div className="zlabel">{z.label}</div>
@@ -284,13 +284,13 @@ export default function Facilities() {
       {/* Features grid */}
       <section className="sec" style={{ padding: '40px 0' }}>
         <div className="wrap">
-          <h2 className="sec-title" style={{ margin: '14px 0 14px' }}>
+          <h2 className="sec-title" data-anim="up" style={{ margin: '14px 0 14px' }}>
             <span className="hline">Engineered for cargo that</span>
             <span className="hline"><span className="accent">needs proof.</span></span>
           </h2>
-          <div className="fac-features">
+          <div className="fac-features" data-anim-group>
             {FEATURES.map((f) => (
-              <div className="fac-feature" key={f.title}>
+              <div className="fac-feature" data-anim="up" key={f.title}>
                 <div className="fi">{f.icon}</div>
                 <h4>{f.title}</h4>
                 <p>{f.desc}</p>

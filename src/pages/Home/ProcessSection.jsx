@@ -143,7 +143,7 @@ export default function ProcessSection() {
   return (
     <section className="sec dark-sec" id="how">
       <div className="wrap">
-        <h2 className="sec-title">
+        <h2 className="sec-title" data-anim="up">
           <span className="hline">Smart Cold Storage.</span>
           <span className="hline"><span className="accent">Seamless</span> from Start to Store.</span>
         </h2>

@@ -1,9 +1,16 @@
 import { useEffect, useRef, useState } from 'react'
+import { gsap, prefersReducedMotion } from '../../lib/gsap'
 
 export default function HeroSection() {
   const videoRef = useRef(null)
   const tourVideoRef = useRef(null)
+  const vtBtnRef = useRef(null)
   const [tourOpen, setTourOpen] = useState(false)
+
+  useEffect(() => {
+    if (prefersReducedMotion() || !vtBtnRef.current) return
+    gsap.from(vtBtnRef.current, { opacity: 0, y: 18, duration: 0.9, ease: 'power2.out', delay: 0.4 })
+  }, [])
 
   useEffect(() => {
     const vid = videoRef.current
@@ -68,7 +75,7 @@ export default function HeroSection() {
         />
         <div className="hs-video-overlay"></div>
 
-        <button className="hs-vt-btn" onClick={() => setTourOpen(true)}>
+        <button className="hs-vt-btn" ref={vtBtnRef} onClick={() => setTourOpen(true)}>
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="15" height="15">
             <circle cx="12" cy="12" r="9"/><path d="M10 8l6 4-6 4z"/>
           </svg>

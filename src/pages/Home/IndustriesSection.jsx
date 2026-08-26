@@ -160,7 +160,7 @@ export default function IndustriesSection() {
   return (
     <section className="sec" id="industries" style={{ padding: 'clamp(50px,8vw,90px) 0 0' }}>
       <div className="wrap">
-        <h2 className="sec-title">
+        <h2 className="sec-title" data-anim="up">
           <span className="hline">Built for cargo that</span>
           <span className="hline"><span className="accent">doesn't forgive</span> mistakes.</span>
         </h2>

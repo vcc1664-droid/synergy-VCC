@@ -117,7 +117,7 @@ export default function ContactSection() {
       <div className="wrap">
         <div className="chill">
           <div className="chill-grid">
-            <div>
+            <div data-anim="up">
               <h2>
                 <span className="hline">Chill,</span>
                 <span className="hline"><span className="accent">we got it.</span></span>
@@ -127,7 +127,7 @@ export default function ContactSection() {
               </p>
             </div>
 
-            <form className="form-card glass" onSubmit={handleSubmit} noValidate>
+            <form className="form-card glass" data-anim="scale" onSubmit={handleSubmit} noValidate>
               <h3>Request a quote</h3>
               <p style={{ margin: 0, color: 'var(--mute)', fontSize: 13.5 }}>A 24-hour response, guaranteed.</p>
 

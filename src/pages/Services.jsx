@@ -264,6 +264,7 @@ function ServiceCard({ s }) {
   return (
     <div
       className={`fc-card${hovered ? ' fc-hovered' : ''}`}
+      data-anim="up"
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >
@@ -297,7 +298,7 @@ export default function Services() {
       {/* Hero */}
       <section className="page-hero svc-hero" style={{ textAlign: 'center' }}>
         <div className="wrap" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', maxWidth: 1000, margin: '0 auto', paddingTop: 'clamp(70px,10vw,100px)', paddingBottom: 'clamp(40px,6vw,80px)' }}>
-          <h1 style={{ maxWidth: 'none' }}>
+          <h1 style={{ maxWidth: 'none' }} data-anim="up">
             <span className="hline">Cold logistics,</span>
             <span className="hline"><span className="accent">end to end.</span></span>
           </h1>
@@ -310,7 +311,7 @@ export default function Services() {
       {/* Services grid */}
       <section className="sec" style={{ paddingTop: 20 }}>
         <div className="wrap">
-          <div className="fc-grid" id="fcGrid">
+          <div className="fc-grid" id="fcGrid" data-anim-group>
             {SERVICES.map((s) => <ServiceCard key={s.n} s={s} />)}
           </div>
         </div>

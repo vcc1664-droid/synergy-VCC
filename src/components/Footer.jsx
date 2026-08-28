@@ -6,8 +6,8 @@ export default function Footer() {
   const navigate = useNavigate()
   const location = useLocation()
   const [subscribed, setSubscribed] = useState(false)
-  const [newsEmail, setNewsEmail]   = useState('')
-  const [newsErr,   setNewsErr]     = useState(false)
+  const [newsEmail, setNewsEmail] = useState('')
+  const [newsErr, setNewsErr] = useState(false)
 
   const handleSubscribe = () => {
     if (!newsEmail.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(newsEmail.trim())) {
@@ -46,7 +46,7 @@ export default function Footer() {
                   background: 'rgba(7,15,48,.06)', border: '1px solid rgba(7,15,48,.12)',
                   borderRadius: 14, padding: '12px 20px',
                 }}>
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#070f30" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 13l4 4L19 7"/></svg>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#070f30" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 13l4 4L19 7" /></svg>
                   <span style={{ fontSize: 13.5, color: '#070f30', fontWeight: 500 }}>
                     Newsletter coming soon — we'll notify you when VCC updates go live!
                   </span>
@@ -63,7 +63,7 @@ export default function Footer() {
                     style={newsErr ? { borderColor: '#ff6b6b', boxShadow: '0 0 0 3px rgba(255,107,107,.15)' } : {}}
                   />
                   <button type="button" aria-label="Subscribe to newsletter" onClick={handleSubscribe}>Subscribe</button>
-                  {newsErr && <span style={{ position:'absolute', bottom:-20, left:0, fontSize:11, color:'#ff6b6b', whiteSpace:'nowrap' }}>Please enter a valid email</span>}
+                  {newsErr && <span style={{ position: 'absolute', bottom: -20, left: 0, fontSize: 11, color: '#ff6b6b', whiteSpace: 'nowrap' }}>Please enter a valid email</span>}
                 </>
               )}
             </div>
@@ -75,7 +75,7 @@ export default function Footer() {
                 <img src="/VCC-Icon.png" alt="VCC" width="32" height="32" />
                 <b>VERSAILLES COLD CHAIN</b>
               </div>
-              <div className="tag">Chill, we got it.<br/>Cold-chain logistics for cargo that matters.</div>
+              <div className="tag">Chill, we got it.<br />Cold-chain logistics for cargo that matters.</div>
             </div>
             <div>
               <h3>Services</h3>
@@ -128,7 +128,7 @@ export default function Footer() {
               <div style={{ display: 'flex', gap: '14px', flexWrap: 'wrap' }}>
                 {[
                   { to: '/privacy-policy', label: 'Privacy Policy' },
-                  { to: '/legal-terms',    label: 'Legal Terms' },
+                  { to: '/legal-terms', label: 'Legal Terms' },
                 ].map(({ to, label }) => (
                   <Link
                     key={to}

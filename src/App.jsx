@@ -8,12 +8,12 @@ import Home from './pages/Home'
 import useSmoothScroll from './hooks/useSmoothScroll'
 import useScrollReveal from './hooks/useScrollReveal'
 
-const About         = lazy(() => import('./pages/About'))
-const Services      = lazy(() => import('./pages/Services'))
-const Facilities    = lazy(() => import('./pages/Facilities'))
-const Edge          = lazy(() => import('./pages/Edge'))
+const About = lazy(() => import('./pages/About'))
+const Services = lazy(() => import('./pages/Services'))
+const Facilities = lazy(() => import('./pages/Facilities'))
+const Edge = lazy(() => import('./pages/Edge'))
 const PrivacyPolicy = lazy(() => import('./pages/PrivacyPolicy'))
-const LegalTerms    = lazy(() => import('./pages/LegalTerms'))
+const LegalTerms = lazy(() => import('./pages/LegalTerms'))
 
 function SnowEffect() {
   const canvasRef = useRef(null)
@@ -35,11 +35,11 @@ function SnowEffect() {
         el.className = 'sf'
         el.textContent = chars[Math.floor(Math.random() * chars.length)]
         el.style.cssText = [
-          'left:'              + (Math.random() * 100)            + '%',
-          'font-size:'         + (8  + Math.random() * 10)        + 'px',
-          'animation-duration:'+ (10 + Math.random() * 16)        + 's',
-          'animation-delay:'   + -(Math.random() * 18)            + 's',
-          '--sf-o:'            + (0.55 + Math.random() * 0.45),
+          'left:' + (Math.random() * 100) + '%',
+          'font-size:' + (8 + Math.random() * 10) + 'px',
+          'animation-duration:' + (10 + Math.random() * 16) + 's',
+          'animation-delay:' + -(Math.random() * 18) + 's',
+          '--sf-o:' + (0.55 + Math.random() * 0.45),
         ].join(';')
         canvas.appendChild(el)
         created.push(el)
@@ -48,12 +48,12 @@ function SnowEffect() {
     }
 
     // Defer to idle so it never blocks first paint
-    let cleanup = () => {}
+    let cleanup = () => { }
     if ('requestIdleCallback' in window) {
-      const id = requestIdleCallback(() => { cleanup = run() ?? (() => {}) }, { timeout: 3000 })
+      const id = requestIdleCallback(() => { cleanup = run() ?? (() => { }) }, { timeout: 3000 })
       return () => { cancelIdleCallback(id); cleanup() }
     } else {
-      const t = setTimeout(() => { cleanup = run() ?? (() => {}) }, 1500)
+      const t = setTimeout(() => { cleanup = run() ?? (() => { }) }, 1500)
       return () => { clearTimeout(t); cleanup() }
     }
   }, [])
@@ -85,13 +85,13 @@ export default function App() {
           <main id="main-content">
             <Suspense fallback={<div style={{ minHeight: '100vh', background: '#070f30' }} />}>
               <Routes>
-                <Route path="/"          element={<Home />} />
-                <Route path="/about"     element={<About />} />
-                <Route path="/services"  element={<Services />} />
+                <Route path="/" element={<Home />} />
+                <Route path="/about" element={<About />} />
+                <Route path="/services" element={<Services />} />
                 <Route path="/facilities" element={<Facilities />} />
-                <Route path="/edge"           element={<Edge />} />
+                <Route path="/edge" element={<Edge />} />
                 <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-                <Route path="/legal-terms"    element={<LegalTerms />} />
+                <Route path="/legal-terms" element={<LegalTerms />} />
               </Routes>
             </Suspense>
           </main>

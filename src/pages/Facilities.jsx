@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react'
 import { Helmet } from 'react-helmet-async'
+import { Link } from 'react-router-dom'
 
 const ZONES = [
   { cls: 'z4', temp: '−25°C', label: 'Deep Freeze', title: 'Deep-Freeze Chamber', desc: 'Tissue · Reagents · Ultra-low pharma · Long-tail storage' },
@@ -15,8 +16,8 @@ const FEATURES = [
     meta: ['FIFO + FEFO', 'WMS-ENFORCED'],
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-        <polyline points="3 6 9 6 9 18 3 18"/><polyline points="9 12 15 12 15 18"/>
-        <line x1="15" y1="18" x2="21" y2="18"/><polyline points="21 18 21 12 15 12"/>
+        <polyline points="3 6 9 6 9 18 3 18" /><polyline points="9 12 15 12 15 18" />
+        <line x1="15" y1="18" x2="21" y2="18" /><polyline points="21 18 21 12 15 12" />
       </svg>
     ),
   },
@@ -26,7 +27,7 @@ const FEATURES = [
     meta: ['LOT TRACE', 'API-NATIVE'],
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-        <rect x="3" y="4" width="18" height="14" rx="2"/><circle cx="12" cy="11" r="2.5"/><path d="M2 20h20"/>
+        <rect x="3" y="4" width="18" height="14" rx="2" /><circle cx="12" cy="11" r="2.5" /><path d="M2 20h20" />
       </svg>
     ),
   },
@@ -36,8 +37,8 @@ const FEATURES = [
     meta: ['−25 → +5°C', 'CALIBRATED'],
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-        <line x1="12" y1="2" x2="12" y2="22"/><line x1="2" y1="12" x2="22" y2="12"/>
-        <line x1="5" y1="5" x2="19" y2="19"/><line x1="5" y1="19" x2="19" y2="5"/>
+        <line x1="12" y1="2" x2="12" y2="22" /><line x1="2" y1="12" x2="22" y2="12" />
+        <line x1="5" y1="5" x2="19" y2="19" /><line x1="5" y1="19" x2="19" y2="5" />
       </svg>
     ),
   },
@@ -47,7 +48,7 @@ const FEATURES = [
     meta: ['GDP · ISO 22000', 'TRACEABLE'],
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M12 22s8-4 8-12V4l-8-2-8 2v6c0 8 8 12 8 12Z"/><path d="m9 12 2 2 4-4"/>
+        <path d="M12 22s8-4 8-12V4l-8-2-8 2v6c0 8 8 12 8 12Z" /><path d="m9 12 2 2 4-4" />
       </svg>
     ),
   },
@@ -57,7 +58,7 @@ const FEATURES = [
     meta: ['7,000 POS', 'HIGH-DENSITY'],
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M3 7l9-4 9 4-9 4-9-4z"/><path d="M3 12l9 4 9-4M3 17l9 4 9-4"/>
+        <path d="M3 7l9-4 9 4-9 4-9-4z" /><path d="M3 12l9 4 9-4M3 17l9 4 9-4" />
       </svg>
     ),
   },
@@ -67,7 +68,7 @@ const FEATURES = [
     meta: ['30s INTERVAL', 'AI-BATCHED'],
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M3 12h3l3-9 4 18 3-9h5"/>
+        <path d="M3 12h3l3-9 4 18 3-9h5" />
       </svg>
     ),
   },
@@ -77,27 +78,27 @@ function FacStats() {
   return (
     <>
       <div className="fs">
-        <div className="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M3 7l9-4 9 4-9 4-9-4z"/><path d="M3 12l9 4 9-4M3 17l9 4 9-4"/></svg></div>
+        <div className="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M3 7l9-4 9 4-9 4-9-4z" /><path d="M3 12l9 4 9-4M3 17l9 4 9-4" /></svg></div>
         <b>7,000</b><span>Pallet Positions / Facility</span>
       </div>
       <div className="fs">
-        <div className="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="3" y1="15" x2="21" y2="15"/><line x1="9" y1="3" x2="9" y2="21"/><line x1="15" y1="3" x2="15" y2="21"/></svg></div>
+        <div className="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" /><line x1="3" y1="9" x2="21" y2="9" /><line x1="3" y1="15" x2="21" y2="15" /><line x1="9" y1="3" x2="9" y2="21" /><line x1="15" y1="3" x2="15" y2="21" /></svg></div>
         <b>70,000<small> sqft</small></b><span>Validated Cold Floor</span>
       </div>
       <div className="fs">
-        <div className="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><line x1="12" y1="2" x2="12" y2="22"/><line x1="2" y1="12" x2="22" y2="12"/><line x1="5" y1="5" x2="19" y2="19"/><line x1="5" y1="19" x2="19" y2="5"/><circle cx="12" cy="12" r="2" fill="currentColor" stroke="none"/></svg></div>
+        <div className="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><line x1="12" y1="2" x2="12" y2="22" /><line x1="2" y1="12" x2="22" y2="12" /><line x1="5" y1="5" x2="19" y2="19" /><line x1="5" y1="19" x2="19" y2="5" /><circle cx="12" cy="12" r="2" fill="currentColor" stroke="none" /></svg></div>
         <b>−25 / +5<small>°C</small></b><span>Multi-Zone Range</span>
       </div>
       <div className="fs">
-        <div className="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="3" width="20" height="18" rx="2"/><path d="M8 3v18M2 9h6M2 15h6"/></svg></div>
+        <div className="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="3" width="20" height="18" rx="2" /><path d="M8 3v18M2 9h6M2 15h6" /></svg></div>
         <b>8,000<small> sqft</small></b><span>Anti Room</span>
       </div>
       <div className="fs">
-        <div className="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/></svg></div>
+        <div className="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" /><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2" /><line x1="12" y1="12" x2="12" y2="16" /><line x1="10" y1="14" x2="14" y2="14" /></svg></div>
         <b>8,500<small> sqft</small></b><span>Staging Area</span>
       </div>
       <div className="fs">
-        <div className="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M8 18v2M16 18v2M2 10h20"/><circle cx="8" cy="14" r="1.5" fill="currentColor" stroke="none"/><circle cx="12" cy="14" r="1.5" fill="currentColor" stroke="none"/><circle cx="16" cy="14" r="1.5" fill="currentColor" stroke="none"/></svg></div>
+        <div className="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="4" width="20" height="14" rx="2" /><path d="M8 18v2M16 18v2M2 10h20" /><circle cx="8" cy="14" r="1.5" fill="currentColor" stroke="none" /><circle cx="12" cy="14" r="1.5" fill="currentColor" stroke="none" /><circle cx="16" cy="14" r="1.5" fill="currentColor" stroke="none" /></svg></div>
         <b>10</b><span>Loading / Unloading Docks</span>
       </div>
     </>
@@ -121,7 +122,7 @@ function WmsPanel() {
       const a = [...arr]
       for (let i = a.length - 1; i > 0; i--) {
         const j = (i * 1103515245 + 12345) % (i + 1)
-        ;[a[i], a[j]] = [a[j], a[i]]
+          ;[a[i], a[j]] = [a[j], a[i]]
       }
       return a
     }

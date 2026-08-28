@@ -248,6 +248,59 @@ export default function Facilities() {
       {/* Zones */}
       <section className="sec" style={{ padding: '60px 0 40px' }}>
         <div className="wrap">
+          {/* Continuous Right-to-Left Scrolling Marquee Ticker - Minimal Light Theme */}
+          <div
+            className="fac-ticker-banner"
+            style={{
+              position: 'relative',
+              overflow: 'hidden',
+              padding: '12px 0',
+              marginBottom: '40px',
+              color: '#070f30',
+            }}
+          >
+            {/* Left & Right Edge Fade Gradients for white background */}
+            <div style={{
+              position: 'absolute', top: 0, left: 0, width: '60px', height: '100%',
+              background: 'linear-gradient(90deg, #ffffff, transparent)', zIndex: 2, pointerEvents: 'none'
+            }} />
+            <div style={{
+              position: 'absolute', top: 0, right: 0, width: '60px', height: '100%',
+              background: 'linear-gradient(-90deg, #ffffff, transparent)', zIndex: 2, pointerEvents: 'none'
+            }} />
+
+            <div style={{
+              display: 'flex',
+              width: 'max-content',
+              animation: 'fac-marquee 30s linear infinite',
+              whiteSpace: 'nowrap',
+              alignItems: 'center',
+            }}>
+              {[1, 2, 3, 4, 5, 6].map((i) => (
+                <div key={i} style={{ display: 'inline-flex', alignItems: 'center', gap: '20px', paddingRight: '48px' }}>
+                  <span style={{ fontWeight: 800, fontSize: '15px', color: '#070f30', letterSpacing: '0.04em' }}>
+                    DERA BASSI
+                  </span>
+                  <span style={{ color: '#0052cc', fontSize: '14px' }}>✦</span>
+                  <span style={{
+                    fontSize: '12px',
+                    fontWeight: 700,
+                    letterSpacing: '0.15em',
+                    color: '#0052cc',
+                    background: 'rgba(0, 82, 204, 0.08)',
+                    padding: '4px 12px',
+                    borderRadius: '100px',
+                    border: '1px solid rgba(0, 82, 204, 0.2)',
+                    fontFamily: 'monospace'
+                  }}>
+                    COMING SOON · APRIL 2027
+                  </span>
+                  <span style={{ color: 'rgba(7, 15, 48, 0.2)', fontSize: '16px', marginLeft: '12px' }}>|</span>
+                </div>
+              ))}
+            </div>
+          </div>
+
           <h2 className="sec-title" style={{ margin: '14px 0 14px' }}>
             <span className="hline">Four temperature zones,</span>
             <span className="hline"><span className="accent">one cold floor.</span></span>

@@ -207,6 +207,10 @@ const FAC_SLIDER_STYLES = `
     from { transform: translateX(0); }
     to   { transform: translateX(-50%); }
   }
+  @keyframes fac-marquee-right {
+    from { transform: translateX(-50%); }
+    to   { transform: translateX(0); }
+  }
   @media (max-width: 768px) {
     .fac-stats-slider { width: calc(100% - 40px); }
     .fac-stats-track  { animation-duration: 14s; }
@@ -248,7 +252,7 @@ export default function Facilities() {
       {/* Zones */}
       <section className="sec" style={{ padding: '60px 0 40px' }}>
         <div className="wrap">
-          {/* Continuous Right-to-Left Scrolling Marquee Ticker - Minimal Light Theme */}
+          {/* Continuous Left-to-Right Scrolling Marquee Ticker - Minimal Light Theme */}
           <div
             className="fac-ticker-banner"
             style={{
@@ -272,7 +276,7 @@ export default function Facilities() {
             <div style={{
               display: 'flex',
               width: 'max-content',
-              animation: 'fac-marquee 30s linear infinite',
+              animation: 'fac-marquee-right 30s linear infinite',
               whiteSpace: 'nowrap',
               alignItems: 'center',
             }}>

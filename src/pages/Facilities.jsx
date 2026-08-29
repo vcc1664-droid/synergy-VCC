@@ -281,7 +281,18 @@ export default function Facilities() {
                   <span style={{ fontWeight: 800, fontSize: '15px', color: '#070f30', letterSpacing: '0.04em' }}>
                     DERA BASSI
                   </span>
-                  <span style={{ color: '#0052cc', fontSize: '14px' }}>✦</span>
+                  <span style={{ display: 'inline-flex', alignItems: 'center', color: '#0052cc' }}>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                      <line x1="12" y1="2" x2="12" y2="22"/>
+                      <line x1="20" y1="12" x2="4" y2="12"/>
+                      <line x1="17.65" y1="5.65" x2="6.35" y2="16.95"/>
+                      <line x1="17.65" y1="18.35" x2="6.35" y2="7.05"/>
+                      <path d="M9 3.5L12 6.5L15 3.5"/>
+                      <path d="M9 20.5L12 17.5L15 20.5"/>
+                      <path d="M20.5 9L17.5 12L20.5 15"/>
+                      <path d="M3.5 9L6.5 12L3.5 15"/>
+                    </svg>
+                  </span>
                   <span style={{
                     fontSize: '12px',
                     fontWeight: 700,

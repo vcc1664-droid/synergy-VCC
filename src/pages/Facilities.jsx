@@ -281,7 +281,7 @@ export default function Facilities() {
                   <span style={{ fontWeight: 800, fontSize: '15px', color: '#070f30', letterSpacing: '0.04em' }}>
                     DERA BASSI
                   </span>
-                  <span style={{ display: 'inline-flex', alignItems: 'center', color: '#0052cc' }}>
+                  <span style={{ display: 'inline-flex', alignItems: 'center', color: '#070F30' }}>
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
                       <line x1="12" y1="2" x2="12" y2="22"/>
                       <line x1="20" y1="12" x2="4" y2="12"/>
@@ -297,11 +297,11 @@ export default function Facilities() {
                     fontSize: '12px',
                     fontWeight: 700,
                     letterSpacing: '0.15em',
-                    color: '#0052cc',
-                    background: 'rgba(0, 82, 204, 0.08)',
+                    color: '#070F30',
+                    background: 'rgba(7, 15, 48, 0.06)',
                     padding: '4px 12px',
                     borderRadius: '100px',
-                    border: '1px solid rgba(0, 82, 204, 0.2)',
+                    border: '1px solid rgba(7, 15, 48, 0.18)',
                     fontFamily: 'monospace'
                   }}>
                     COMING SOON · APRIL 2027

@@ -216,6 +216,95 @@ const FAC_SLIDER_STYLES = `
   }
 `
 
+function TechFrameVideo({ src }) {
+  const clipPathId = 'tech-frame-clip'
+  const pathD = 'M 0.035 0.0 L 0.46 0.0 C 0.485 0.0, 0.495 0.05, 0.52 0.05 L 0.82 0.05 C 0.845 0.05, 0.855 0.0, 0.88 0.0 L 0.965 0.0 C 0.985 0.0, 1.0 0.015, 1.0 0.035 L 1.0 0.965 C 1.0 0.985, 0.985 1.0, 0.965 1.0 L 0.035 1.0 C 0.015 1.0, 0.0 0.985, 0.0 0.965 L 0.0 0.84 C 0.0 0.82, 0.012 0.805, 0.024 0.795 C 0.034 0.785, 0.04 0.77, 0.04 0.75 L 0.04 0.53 C 0.04 0.51, 0.034 0.495, 0.024 0.485 C 0.012 0.475, 0.0 0.46, 0.0 0.44 L 0.0 0.035 C 0.0 0.015, 0.015 0.0, 0.035 0.0 Z'
+
+  return (
+    <div
+      className="tech-frame-container"
+      data-anim="up"
+      style={{
+        position: 'relative',
+        width: '100%',
+        aspectRatio: '16 / 10',
+      }}
+    >
+      <svg width="0" height="0" style={{ position: 'absolute' }}>
+        <defs>
+          <clipPath id={clipPathId} clipPathUnits="objectBoundingBox">
+            <path d={pathD} />
+          </clipPath>
+        </defs>
+      </svg>
+
+      <div
+        style={{
+          width: '100%',
+          height: '100%',
+          clipPath: `url(#${clipPathId})`,
+          WebkitClipPath: `url(#${clipPathId})`,
+          background: '#07122f',
+          position: 'relative',
+          overflow: 'hidden',
+        }}
+      >
+        <video
+          src={src}
+          autoPlay
+          loop
+          muted
+          playsInline
+          controls={false}
+          disablePictureInPicture
+          style={{
+            width: '100%',
+            height: '100%',
+            objectFit: 'cover',
+            display: 'block',
+            transform: 'scale(1.03)',
+            pointerEvents: 'none',
+          }}
+        />
+
+        <div
+          style={{
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            right: 0,
+            height: '35%',
+            background: 'linear-gradient(180deg, rgba(255, 255, 255, 0.1) 0%, transparent 100%)',
+            pointerEvents: 'none',
+          }}
+        />
+      </div>
+
+      <svg
+        viewBox="0 0 1 1"
+        preserveAspectRatio="none"
+        style={{
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          width: '100%',
+          height: '100%',
+          pointerEvents: 'none',
+          overflow: 'visible',
+        }}
+      >
+        <path
+          d={pathD}
+          fill="none"
+          stroke="rgba(37, 99, 235, 0.4)"
+          strokeWidth="1.5"
+          vectorEffect="non-scaling-stroke"
+        />
+      </svg>
+    </div>
+  )
+}
+
 export default function Facilities() {
   return (
     <>
@@ -249,15 +338,31 @@ export default function Facilities() {
       {/* Zones */}
       <section className="sec" style={{ padding: '60px 0 40px' }}>
         <div className="wrap">
-          <h2 className="sec-title" data-anim="up" style={{ margin: '14px 0 14px' }}>
-            <span className="hline">Four temperature zones,</span>
-            <span className="hline"><span className="accent">one cold floor.</span></span>
-          </h2>
-          <p className="sec-sub" style={{ maxWidth: 600 }}>
-            Validated chambers calibrated against your release SOP. Pallets are mapped to the zone that matches their profile — and the WMS won't allow a mis-pick.
-          </p>
+          <div
+            className="fac-zones-header"
+            style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
+              gap: '32px 48px',
+              alignItems: 'start',
+              marginBottom: '36px',
+            }}
+          >
+            <div className="fac-zones-text" style={{ marginTop: -12 }}>
+              <h2 className="sec-title" data-anim="up" style={{ margin: '0 0 16px', lineHeight: 1.05 }}>
+                <span className="hline">Four temperature zones,</span>
+                <span className="hline"><span className="accent">one cold floor.</span></span>
+              </h2>
+              <p className="sec-sub" style={{ maxWidth: 560, margin: 0, lineHeight: 1.65 }}>
+                Validated chambers calibrated against your release SOP. Pallets are mapped to the zone that matches their profile — and the WMS won't allow a mis-pick.
+              </p>
+            </div>
+            <div style={{ width: '100%', maxWidth: 560, justifySelf: 'center' }}>
+              <TechFrameVideo src="/video/0908.mp4" />
+            </div>
+          </div>
 
-          <div className="fac-zones">
+          <div className="fac-zones" style={{ marginTop: 0 }}>
             <div className="fac-zones-grid" data-anim-group>
               {ZONES.map((z) => (
                 <div className={`fac-zone ${z.cls}`} data-anim="up" key={z.cls}>

@@ -6,6 +6,7 @@ import CurveSection from './CurveSection'
 // Lazy-load below-fold sections — reduces initial JS parse / TBT on mobile
 const ServicesSection     = lazy(() => import('./ServicesSection'))
 const ProcessSection      = lazy(() => import('./ProcessSection'))
+const WhyChooseSection    = lazy(() => import('./WhyChooseSection'))
 const TestimonialsSection = lazy(() => import('./TestimonialsSection'))
 const CertificationsSection = lazy(() => import('./CertificationsSection'))
 const IndustriesSection   = lazy(() => import('./IndustriesSection'))
@@ -15,6 +16,7 @@ const BelowFold = () => (
   <Suspense fallback={null}>
     <ServicesSection />
     <ProcessSection />
+    <WhyChooseSection />
     <TestimonialsSection />
     <CertificationsSection />
     <IndustriesSection />

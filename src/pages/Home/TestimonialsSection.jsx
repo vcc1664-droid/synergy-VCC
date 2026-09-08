@@ -3,31 +3,31 @@ import React from "react";
 const QUOTES = [
   {
     text: "VCC took a 14-hour cold run from being our biggest risk to a non-event. The audit logs alone changed how we manage inventory with our retail partners.",
-    initials: "CR",
+    initials: "PS",
     name: "Priya Sharma",
     role: "Head of Cold Supply",
   },
   {
     text: "They picked up the contract two operators had failed. Three months in, zero excursions, and a dashboard our ops team actually likes.",
-    initials: "ML",
+    initials: "RK",
     name: "Rohit Khanna",
     role: "Director of Logistics",
   },
   {
     text: "We deep-freeze seafood from Kochi. Every degree matters. VCC is the first facility we trust to never break the curve, ever.",
-    initials: "ID",
+    initials: "AN",
     name: "Anjali Nair",
     role: "COO",
   },
   {
     text: "The team is precise without being precious. They show up early, in clean bays, with the right paperwork. That is rare in cold chain.",
-    initials: "HV",
+    initials: "VP",
     name: "Vikram Patel",
     role: "VP Operations",
   },
   {
     text: "Our fresh produce moves across three states before it hits the shelf. VCC handles multi-zone storage like it is routine. For them, it is.",
-    initials: "AB",
+    initials: "MI",
     name: "Meera Iyer",
     role: "Logistics Head",
   },
@@ -56,26 +56,26 @@ export default function TestimonialsSection() {
   return (
     <>
       <style>{`
-        .sec {
+        #stories.sec {
           padding: 100px 0;
           background: #fff;
           overflow: hidden;
         }
 
-        .wrap {
+        #stories .wrap {
           max-width: 1200px;
           margin: 0 auto;
           padding: 0 20px;
         }
 
-        .sec-title {
+        #stories .sec-title {
           text-align: center;
           font-size: clamp(2rem, 5vw, 4rem);
           font-weight: 700;
           margin-bottom: 20px;
         }
 
-        .hline {
+        #stories .hline {
           display: inline-block;
         }
 

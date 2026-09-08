@@ -4,6 +4,7 @@ import HeroSection from './HeroSection'
 import CurveSection from './CurveSection'
 
 // Lazy-load below-fold sections — reduces initial JS parse / TBT on mobile
+const ServicesSection     = lazy(() => import('./ServicesSection'))
 const ProcessSection      = lazy(() => import('./ProcessSection'))
 const TestimonialsSection = lazy(() => import('./TestimonialsSection'))
 const CertificationsSection = lazy(() => import('./CertificationsSection'))
@@ -12,6 +13,7 @@ const ContactSection      = lazy(() => import('./ContactSection'))
 
 const BelowFold = () => (
   <Suspense fallback={null}>
+    <ServicesSection />
     <ProcessSection />
     <TestimonialsSection />
     <CertificationsSection />

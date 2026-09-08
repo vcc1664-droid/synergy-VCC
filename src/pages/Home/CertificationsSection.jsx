@@ -6,8 +6,8 @@ export default function CertificationsSection() {
           <h2 className="sec-title" data-anim="up" style={{ margin: '18px auto 0', whiteSpace: 'nowrap', fontSize: 'clamp(28px,4.5vw,64px)' }}>
             Certified, audited, accredited.<span style={{ fontSize: '0.55em', verticalAlign: 'super', letterSpacing: 0 }}>*</span>
           </h2>
-          <p className="sec-sub" style={{ margin: '24px auto 0', maxWidth: 620 }}>
-            Six global and national accreditations covering food safety, environment, export, retail and pharma GDP. Audited annually. Never lapsed.
+          <p className="sec-sub" style={{ margin: '24px auto 0', maxWidth: 680 }}>
+            Six accreditations back our cold storage facility — covering food safety, environmental management, export compliance and pharma-grade GDP standards.
           </p>
         </div>
 

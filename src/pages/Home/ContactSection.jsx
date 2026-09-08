@@ -3,17 +3,17 @@ import { useState } from 'react'
 const SHEET_URL = 'https://script.google.com/macros/s/AKfycbzjV_ZE1OFp0mfgEfD9YTfpwZYrUVMHu-FTgBslvWUEiYnDEc_Ux9Dk8puGhCybGL7u/exec'
 
 const RULES = {
-  name:  v => !v.trim()                          ? 'Name is required'
-             : v.trim().length < 2               ? 'Name must be at least 2 characters'
-             : !/^[a-zA-Z\s'.,-]+$/.test(v.trim()) ? 'Enter a valid name'
-             : '',
-  email: v => !v.trim()                          ? 'Email is required'
-             : !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim()) ? 'Enter a valid email address'
-             : '',
+  name: v => !v.trim() ? 'Name is required'
+    : v.trim().length < 2 ? 'Name must be at least 2 characters'
+      : !/^[a-zA-Z\s'.,-]+$/.test(v.trim()) ? 'Enter a valid name'
+        : '',
+  email: v => !v.trim() ? 'Email is required'
+    : !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim()) ? 'Enter a valid email address'
+      : '',
   phone: v => {
     const digits = v.replace(/\D/g, '')
     if (!v.trim()) return 'Phone number is required'
-    if (digits.length < 7)  return 'Enter a valid phone number'
+    if (digits.length < 7) return 'Enter a valid phone number'
     if (digits.length > 15) return 'Phone number is too long'
     if (!/^[\d\s\+\-\(\)]+$/.test(v.trim())) return 'Enter a valid phone number'
     return ''
@@ -24,10 +24,10 @@ const RULES = {
 const INIT = { name: '', company: '', email: '', phone: '', cargo: '', volume: '', need: '' }
 
 export default function ContactSection() {
-  const [values,  setValues]  = useState(INIT)
-  const [errors,  setErrors]  = useState({})
+  const [values, setValues] = useState(INIT)
+  const [errors, setErrors] = useState({})
   const [touched, setTouched] = useState({})
-  const [sent,    setSent]    = useState(false)
+  const [sent, setSent] = useState(false)
   const [loading, setLoading] = useState(false)
   const [submitErr, setSubmitErr] = useState(false)
   const [submitErrMsg, setSubmitErrMsg] = useState('')
@@ -49,8 +49,8 @@ export default function ContactSection() {
 
     // Touch all validated fields and run all rules
     const allTouched = { name: true, email: true, phone: true, cargo: true }
-    const allErrors  = {
-      name:  validate('name',  values.name),
+    const allErrors = {
+      name: validate('name', values.name),
       email: validate('email', values.email),
       phone: validate('phone', values.phone),
       cargo: validate('cargo', values.cargo),
@@ -123,7 +123,7 @@ export default function ContactSection() {
                 <span className="hline"><span className="accent">we got it.</span></span>
               </h2>
               <p className="lede" style={{ marginTop: 42 }}>
-                Tell us what needs to stay cold, where it needs to go, and when. We&apos;ll come back with a tailored proposal within 24 hours.
+                Tell us what needs to stay cold and where it&apos;s headed. Whether you need space in our cold storage warehouse or a full-service cold storage facility, we&apos;ll respond within 24 hours.
               </p>
             </div>
 
@@ -221,7 +221,7 @@ export default function ContactSection() {
                 }}>
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
                     stroke="#0a8f4f" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M5 13l4 4L19 7"/>
+                    <path d="M5 13l4 4L19 7" />
                   </svg>
                   <span style={{ fontSize: 13.5, color: 'rgba(255,255,255,.8)' }}>
                     Request sent! Our team will reach out within 24 hours.

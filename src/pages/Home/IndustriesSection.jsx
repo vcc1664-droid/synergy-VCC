@@ -164,6 +164,9 @@ export default function IndustriesSection() {
           <span className="hline">Built for cargo that</span>
           <span className="hline"><span className="accent">doesn't forgive</span> mistakes.</span>
         </h2>
+        <p className="sec-sub" data-anim="up" style={{ textAlign: 'center', maxWidth: 720, margin: '16px auto 0', color: '#4b5563', fontSize: 'clamp(1rem, 1.25vw, 1.12rem)', lineHeight: 1.65 }}>
+          Our cold chain logistics is built to flex across 11 industries — because pharma, seafood and dairy don't share the same rules.
+        </p>
       </div>
 
       <div className="ind-gallery-wrap" id="indGalleryWrap">

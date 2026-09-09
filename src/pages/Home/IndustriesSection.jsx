@@ -51,13 +51,13 @@ export default function IndustriesSection() {
     ringRef.current.style.transform = `rotateY(${rotationRef.current}deg)`
     cardRefs.current.forEach((c, i) => {
       if (!c) return
-      const ia   = (i * ANGLE_PER + rotationRef.current) % 360
-      const rel  = ((ia + 360) % 360)
+      const ia = (i * ANGLE_PER + rotationRef.current) % 360
+      const rel = ((ia + 360) % 360)
       const norm = Math.abs(rel > 180 ? 360 - rel : rel)
       const opacity = Math.max(0.15, 1 - norm / 150)
-      const blur    = Math.min(9, norm / 15)
+      const blur = Math.min(9, norm / 15)
       c.style.opacity = String(opacity)
-      c.style.filter  = blur > 0.2 ? `blur(${blur.toFixed(1)}px)` : ''
+      c.style.filter = blur > 0.2 ? `blur(${blur.toFixed(1)}px)` : ''
     })
   }
 

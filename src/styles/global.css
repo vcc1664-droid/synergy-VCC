@@ -11498,13 +11498,12 @@ footer .f-bottom {
 }
 
 #how {
-  background: #070f30 !important;
+  background: #ffffff !important;
   border: none !important;
   border-top: none !important;
   border-bottom: none !important;
   outline: none !important;
   box-shadow: none !important;
-  margin-top: -1px !important;
   position: relative;
   z-index: 1;
 }
@@ -11590,13 +11589,11 @@ footer .f-bottom {
   flex-direction: column;
   justify-content: flex-end;
   padding: 24px 20px;
-  background: linear-gradient(
-    to top,
-    rgba(4, 9, 32, 0.95) 0%,
-    rgba(4, 9, 32, 0.8) 38%,
-    rgba(4, 9, 32, 0.25) 65%,
-    transparent 100%
-  );
+  background: linear-gradient(to top,
+      rgba(4, 9, 32, 0.95) 0%,
+      rgba(4, 9, 32, 0.8) 38%,
+      rgba(4, 9, 32, 0.25) 65%,
+      transparent 100%);
   transition: background 0.3s ease;
 }
 

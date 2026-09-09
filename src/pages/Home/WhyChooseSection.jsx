@@ -15,9 +15,9 @@ const PILLARS = [
         <path d="M6 13h3a4 4 0 0 0 0-8" />
       </svg>
     ),
-    accent: '#070F30',
-    gradient: 'linear-gradient(135deg, rgba(7, 15, 48, 0.06) 0%, rgba(7, 15, 48, 0.02) 100%)',
-    borderGlow: 'rgba(7, 15, 48, 0.22)',
+    accent: '#38bdf8',
+    gradient: 'linear-gradient(135deg, rgba(56, 189, 248, 0.15) 0%, rgba(37, 99, 235, 0.08) 100%)',
+    borderGlow: 'rgba(56, 189, 248, 0.35)',
   },
   {
     num: '02',
@@ -30,9 +30,9 @@ const PILLARS = [
         <path d="M2 12h20M20 12l-4-4m4 4-4 4M4 6h16M4 18h16" />
       </svg>
     ),
-    accent: '#070F30',
-    gradient: 'linear-gradient(135deg, rgba(7, 15, 48, 0.06) 0%, rgba(7, 15, 48, 0.02) 100%)',
-    borderGlow: 'rgba(7, 15, 48, 0.22)',
+    accent: '#818cf8',
+    gradient: 'linear-gradient(135deg, rgba(129, 140, 248, 0.15) 0%, rgba(37, 99, 235, 0.08) 100%)',
+    borderGlow: 'rgba(129, 140, 248, 0.35)',
   },
   {
     num: '03',
@@ -48,9 +48,9 @@ const PILLARS = [
         <circle cx="18.5" cy="18.5" r="2.5" />
       </svg>
     ),
-    accent: '#070F30',
-    gradient: 'linear-gradient(135deg, rgba(7, 15, 48, 0.06) 0%, rgba(7, 15, 48, 0.02) 100%)',
-    borderGlow: 'rgba(7, 15, 48, 0.22)',
+    accent: '#34d399',
+    gradient: 'linear-gradient(135deg, rgba(52, 211, 153, 0.15) 0%, rgba(37, 99, 235, 0.08) 100%)',
+    borderGlow: 'rgba(52, 211, 153, 0.35)',
   },
 ]
 
@@ -59,10 +59,12 @@ export default function WhyChooseSection() {
     <>
       <style>{`
         #why-choose {
-          padding: clamp(70px, 9vw, 120px) 0;
-          background: linear-gradient(180deg, #f8fbff 0%, #ffffff 50%, #f9fbfd 100%);
+          padding: clamp(70px, 8vw, 110px) 0;
+          background: #070f30;
           position: relative;
           overflow: hidden;
+          border-top: 1px solid rgba(255, 255, 255, 0.06);
+          border-bottom: 1px solid rgba(255, 255, 255, 0.06);
         }
 
         #why-choose::before {
@@ -73,7 +75,7 @@ export default function WhyChooseSection() {
           transform: translateX(-50%);
           width: 800px;
           height: 400px;
-          background: radial-gradient(circle, rgba(37, 99, 235, 0.06) 0%, transparent 70%);
+          background: radial-gradient(circle, rgba(37, 99, 235, 0.16) 0%, transparent 70%);
           pointer-events: none;
         }
 
@@ -81,30 +83,6 @@ export default function WhyChooseSection() {
           text-align: center;
           max-width: 860px;
           margin: 0 auto clamp(40px, 6vw, 64px);
-        }
-
-        .why-badge {
-          display: inline-flex;
-          align-items: center;
-          gap: 8px;
-          padding: 6px 16px;
-          border-radius: 999px;
-          background: rgba(37, 99, 235, 0.08);
-          border: 1px solid rgba(37, 99, 235, 0.18);
-          color: #1d4ed8;
-          font-size: 0.82rem;
-          font-weight: 700;
-          letter-spacing: 0.08em;
-          text-transform: uppercase;
-          margin-bottom: 18px;
-        }
-
-        .why-badge-dot {
-          width: 7px;
-          height: 7px;
-          border-radius: 50%;
-          background: #2563eb;
-          box-shadow: 0 0 8px #2563eb;
         }
 
         .why-cards-grid {
@@ -116,12 +94,12 @@ export default function WhyChooseSection() {
         }
 
         .why-card {
-          background: #ffffff;
+          background: linear-gradient(180deg, rgba(255, 255, 255, 0.06) 0%, rgba(255, 255, 255, 0.02) 100%);
           border-radius: 20px;
           padding: clamp(28px, 3.2vw, 38px);
-          border: 1px solid rgba(15, 23, 42, 0.08);
-          box-shadow: none;
-          transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1), border-color 0.35s ease;
+          border: 1px solid rgba(255, 255, 255, 0.09);
+          backdrop-filter: blur(12px);
+          transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1), border-color 0.35s ease, box-shadow 0.35s ease;
           display: flex;
           flex-direction: column;
           position: relative;
@@ -130,8 +108,9 @@ export default function WhyChooseSection() {
 
         .why-card:hover {
           transform: translateY(-6px);
-          box-shadow: none;
           border-color: var(--card-border-glow);
+          box-shadow: 0 16px 36px rgba(0, 0, 0, 0.35);
+          background: linear-gradient(180deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.03) 100%);
         }
 
         .why-card-top {
@@ -162,7 +141,7 @@ export default function WhyChooseSection() {
           font-family: 'Satoshi', sans-serif;
           font-size: 1.5rem;
           font-weight: 800;
-          color: rgba(15, 23, 42, 0.16);
+          color: rgba(255, 255, 255, 0.18);
           letter-spacing: -0.02em;
         }
 
@@ -178,7 +157,7 @@ export default function WhyChooseSection() {
         .why-card-title {
           font-size: clamp(1.2rem, 1.6vw, 1.4rem);
           font-weight: 700;
-          color: #070f30;
+          color: #ffffff;
           margin: 0 0 14px;
           line-height: 1.25;
         }
@@ -186,7 +165,7 @@ export default function WhyChooseSection() {
         .why-card-text {
           font-size: 0.98rem;
           line-height: 1.68;
-          color: #475569;
+          color: rgba(220, 232, 255, 0.78);
           margin: 0 0 24px;
           flex-grow: 1;
         }
@@ -196,7 +175,7 @@ export default function WhyChooseSection() {
           flex-wrap: wrap;
           gap: 8px;
           padding-top: 16px;
-          border-top: 1px dashed rgba(15, 23, 42, 0.1);
+          border-top: 1px dashed rgba(255, 255, 255, 0.12);
         }
 
         .why-pill {
@@ -204,8 +183,9 @@ export default function WhyChooseSection() {
           font-weight: 600;
           padding: 4px 10px;
           border-radius: 6px;
-          background: #f1f5f9;
-          color: #334155;
+          background: rgba(255, 255, 255, 0.06);
+          color: rgba(220, 232, 255, 0.9);
+          border: 1px solid rgba(255, 255, 255, 0.08);
           letter-spacing: 0.02em;
         }
 
@@ -218,11 +198,11 @@ export default function WhyChooseSection() {
         }
       `}</style>
 
-      <section className="sec" id="why-choose">
+      <section className="sec dark-sec" id="why-choose">
         <div className="wrap">
           <div className="why-choose-header">
-            <h2 className="sec-title" data-anim="up" style={{ textAlign: 'center', marginBottom: 16 }}>
-              <span className="hline">Why Choose <span className="accent">Versailles Cold Chain</span></span>
+            <h2 className="sec-title" data-anim="up" style={{ textAlign: 'center', marginBottom: 16, color: '#ffffff' }}>
+              <span className="hline">Why Choose <span className="accent" style={{ color: '#7ee7ff' }}>Versailles Cold Chain</span></span>
             </h2>
             <p
               className="sec-sub"
@@ -231,7 +211,7 @@ export default function WhyChooseSection() {
                 maxWidth: 720,
                 margin: '0 auto',
                 textAlign: 'center',
-                color: '#475569',
+                color: 'rgba(220, 232, 255, 0.8)',
                 fontSize: 'clamp(1rem, 1.25vw, 1.12rem)',
                 lineHeight: 1.65,
               }}

@@ -85,6 +85,7 @@ function ServiceGridCard({ service }) {
       <div className="home-svc-overlay">
         <h3 className="home-svc-title">{service.title}</h3>
         <p className="home-svc-sub">{service.sub}</p>
+        <p className="home-svc-desc">{service.desc}</p>
       </div>
     </div>
   )

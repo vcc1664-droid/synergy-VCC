@@ -19,7 +19,7 @@ export default function HeroSection() {
     const load = () => {
       vid.src = '/Header.webm'
       vid.load()
-      vid.play().catch(() => {})
+      vid.play().catch(() => { })
     }
 
     if ('requestIdleCallback' in window) {
@@ -32,7 +32,7 @@ export default function HeroSection() {
   useEffect(() => {
     document.body.style.overflow = tourOpen ? 'hidden' : ''
     if (tourOpen) {
-      setTimeout(() => tourVideoRef.current?.play().catch(() => {}), 100)
+      setTimeout(() => tourVideoRef.current?.play().catch(() => { }), 100)
     } else {
       tourVideoRef.current?.pause()
     }
@@ -46,7 +46,7 @@ export default function HeroSection() {
           <div className="vt-box" onClick={e => e.stopPropagation()}>
             <button className="vt-close" onClick={() => setTourOpen(false)} aria-label="Close virtual tour">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" width="16" height="16">
-                <path d="M18 6L6 18M6 6l12 12"/>
+                <path d="M18 6L6 18M6 6l12 12" />
               </svg>
             </button>
             <video
@@ -74,18 +74,7 @@ export default function HeroSection() {
           preload="none"
         />
         <div className="hs-video-overlay"></div>
-
-        <button className="hs-vt-btn" ref={vtBtnRef} onClick={() => setTourOpen(true)}>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="15" height="15">
-            <circle cx="12" cy="12" r="9"/><path d="M10 8l6 4-6 4z"/>
-          </svg>
-          Virtual Tour
-        </button>
       </section>
-
-      <h1 className="vh">
-        Versailles Cold Chain &mdash; Cold Storage &amp; Temperature-Controlled Logistics
-      </h1>
     </>
   )
 }

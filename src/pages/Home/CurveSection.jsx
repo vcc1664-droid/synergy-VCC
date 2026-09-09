@@ -4,9 +4,9 @@ const GUARANTEES = [
   {
     num: '01',
     title: 'Temperature, locked.',
-    body: 'Every chamber runs independently at its assigned setpoint. IoT probes log readings every 30 seconds — and trigger an alert before a deviation becomes a problem.',
+    body: 'Every chamber in our cold storage warehouse runs independently at its assigned setpoint. IoT probes log readings every 30 seconds — and flag any deviation before it becomes a problem.',
     stat: '±0.3°C',
-    statLabel: 'Maximum drift — ever',
+    statLabel: 'Maximum drift, ever',
     accent: '#0d2d6e',
     icon: (
       <svg viewBox="0 0 52 52" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
@@ -21,7 +21,7 @@ const GUARANTEES = [
   {
     num: '02',
     title: 'Your cargo, visible.',
-    body: 'Every pallet carries a UHF RFID tag from inbound to outbound. You get live location, temperature history, lot number, and expiry — from your phone.',
+    body: 'Every pallet carries a UHF RFID tag from inbound to outbound. You get live location, temperature history, lot number and expiry — right from your phone.',
     stat: '100%',
     statLabel: 'Pallet-level traceability',
     accent: '#162058',
@@ -38,7 +38,7 @@ const GUARANTEES = [
   {
     num: '03',
     title: 'Audit-ready, always.',
-    body: 'Every movement, every temperature reading, every access event is logged and signed. Your QA team gets a GDP-compliant PDF export — no chasing, no gaps.',
+    body: 'Every movement, every reading, every access event gets logged and signed. Your QA team gets a GDP-compliant PDF export — no chasing, no gaps.',
     stat: '5 yr',
     statLabel: 'Digital record retention',
     accent: '#070f30',

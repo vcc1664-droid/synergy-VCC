@@ -141,13 +141,13 @@ export default function ProcessSection() {
   }
 
   return (
-    <section className="sec dark-sec" id="how">
+    <section className="sec dark-sec" id="how" style={{ paddingTop: '40px' }}>
       <div className="wrap">
-        <h2 className="sec-title" data-anim="up" style={{ textAlign: 'center' }}>
+        <h2 className="sec-title" data-anim="up" style={{ textAlign: 'center', marginTop: 0 }}>
           <span className="hline">Smart Cold Storage.</span>
           <span className="hline"><span className="accent">Seamless</span> from Start to Store.</span>
         </h2>
-        <p className="sec-sub" data-anim="up" style={{ maxWidth: 720, margin: '16px auto 40px', textAlign: 'center', color: 'rgba(220, 232, 255, 0.75)', lineHeight: 1.6 }}>
+        <p className="sec-sub" data-anim="up" style={{ maxWidth: 720, margin: '14px auto 32px', textAlign: 'center', color: 'rgba(220, 232, 255, 0.75)', lineHeight: 1.6 }}>
           From the moment an order lands to the moment it leaves our dock, our cold chain logistics process runs on one connected system — built for temperature controlled logistics at scale.
         </p>
 

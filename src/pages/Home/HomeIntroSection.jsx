@@ -65,7 +65,7 @@ export default function HomeIntroSection() {
           font-weight: 800;
           line-height: 1.2;
           letter-spacing: -0.025em;
-          color: #ffffff !important;
+          color: #CBD0DA !important;
           opacity: 1 !important;
           visibility: visible !important;
           max-width: 1040px;
@@ -120,10 +120,7 @@ export default function HomeIntroSection() {
 
         <div className="home-intro-wrap">
           <h1 className="home-intro-title">
-            Versailles Cold Chain &mdash;
-            <span className="intro-title-accent">
-              Reliable Cold Chain Logistics, Delivered with Precision
-            </span>
+            Reliable Cold Chain Logistics, Delivered with Precision
           </h1>
 
           <p className="home-intro-lede">

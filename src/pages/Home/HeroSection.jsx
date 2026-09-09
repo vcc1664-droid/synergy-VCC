@@ -75,6 +75,10 @@ export default function HeroSection() {
         />
         <div className="hs-video-overlay"></div>
       </section>
+
+      <h1 className="vh">
+        Versailles Cold Chain &mdash; Cold Storage &amp; Temperature-Controlled Logistics
+      </h1>
     </>
   )
 }

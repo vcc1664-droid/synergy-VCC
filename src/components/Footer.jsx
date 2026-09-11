@@ -143,13 +143,13 @@ export default function Footer() {
               </div>
             </div>
             <div className="socials">
-              <a href="https://www.linkedin.com/in/versailles-cold-chain-595063413/?isSelfProfile=true" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+              <a href="https://www.linkedin.com/company/versailles-cold-chain/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
                 <img src="/linkedin.png" alt="LinkedIn" style={{ width: 28, height: 28, objectFit: 'contain', display: 'block' }} />
               </a>
-              <a href="https://www.instagram.com/versaillescoldchain?igsh=MWk0ZTQ4ZmYxbWdncQ==" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+              <a href="https://www.instagram.com/versaillescoldchain/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
                 <img src="/instagram.png" alt="Instagram" style={{ width: 28, height: 28, objectFit: 'contain', display: 'block' }} />
               </a>
-              <a href="https://www.facebook.com/profile.php?id=61590586707674" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+              <a href="https://www.facebook.com/profile.php?id=61591278001491" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
                 <img src="/facebook.png" alt="Facebook" style={{ width: 28, height: 28, objectFit: 'contain', display: 'block' }} />
               </a>
             </div>

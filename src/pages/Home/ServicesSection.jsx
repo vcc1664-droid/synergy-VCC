@@ -52,18 +52,26 @@ const HOME_SERVICES = [
   },
 ]
 
-function ServiceGridCard({ service }) {
+function ServiceGridCard({ service, index }) {
   const [hovered, setHovered] = useState(false)
 
   return (
     <div
-      className={`home-svc-card${hovered ? ' is-hovered' : ''}`}
+      className={`home-svc-card home-bento-card-${index + 1}${hovered ? ' is-hovered' : ''}`}
       data-anim="up"
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >
       <div className="home-svc-badge">
+        <span className="home-svc-badge-dot">✦</span>
         <span>{service.num}</span>
+      </div>
+
+      <div className="home-svc-corner-arrow" aria-hidden="true">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <line x1="7" y1="17" x2="17" y2="7" />
+          <polyline points="7 7 17 7 17 17" />
+        </svg>
       </div>
 
       <img
@@ -83,8 +91,8 @@ function ServiceGridCard({ service }) {
       />
 
       <div className="home-svc-overlay">
-        <h3 className="home-svc-title">{service.title}</h3>
         <p className="home-svc-sub">{service.sub}</p>
+        <h3 className="home-svc-title">{service.title}</h3>
         <p className="home-svc-desc">{service.desc}</p>
       </div>
     </div>
@@ -104,9 +112,9 @@ export default function ServicesSection() {
           </p>
         </div>
 
-        <div className="home-svc-grid" data-anim-group>
-          {HOME_SERVICES.map((service) => (
-            <ServiceGridCard key={service.num} service={service} />
+        <div className="home-bento-grid" data-anim-group>
+          {HOME_SERVICES.map((service, index) => (
+            <ServiceGridCard key={service.num} service={service} index={index} />
           ))}
         </div>
       </div>

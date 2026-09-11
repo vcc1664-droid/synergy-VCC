@@ -6,13 +6,13 @@ const PILLARS = [
     badge: 'DISCIPLINE & PRECISION',
     title: 'Modern Facility & Climate Precision',
     text: "Versailles Cold Chain runs a modern facility built for cargo that can't wait and can't warm up. From fresh produce to vaccines, we handle it with total discipline — precise, documented, always on time.",
-    highlights: ['Multi-Temperature Zones', 'Zero-Excursion Protocol', 'Pharma & Food Grade'],
+    highlights: ['Multi-Temp Zones', 'Zero Excursion', 'Pharma & Food Grade'],
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M6 3h12" />
-        <path d="M6 8h12" />
-        <path d="m6 13 8.5 8" />
-        <path d="M6 13h3a4 4 0 0 0 0-8" />
+        <path d="M14 4v10.54a4 4 0 1 1-4 0V4a2 2 0 0 1 4 0Z" />
+        <path d="M10 8h4" />
+        <path d="M10 5h4" />
+        <circle cx="12" cy="17" r="1.5" fill="currentColor" />
       </svg>
     ),
     accent: '#38bdf8',
@@ -27,12 +27,16 @@ const PILLARS = [
     highlights: ['UHF RFID Traceability', '24/7 Live Telemetry', 'Cloud WMS Integration'],
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M2 12h20M20 12l-4-4m4 4-4 4M4 6h16M4 18h16" />
+        <rect x="7" y="5" width="10" height="14" rx="2" />
+        <line x1="10" y1="8" x2="10" y2="16" />
+        <line x1="14" y1="8" x2="14" y2="16" />
+        <path d="M4 8a6 6 0 0 0 0 8" />
+        <path d="M20 8a6 6 0 0 1 0 8" />
       </svg>
     ),
-    accent: '#818cf8',
-    gradient: 'linear-gradient(135deg, rgba(129, 140, 248, 0.15) 0%, rgba(37, 99, 235, 0.08) 100%)',
-    borderGlow: 'rgba(129, 140, 248, 0.35)',
+    accent: '#38bdf8',
+    gradient: 'linear-gradient(135deg, rgba(56, 189, 248, 0.15) 0%, rgba(37, 99, 235, 0.08) 100%)',
+    borderGlow: 'rgba(56, 189, 248, 0.35)',
   },
   {
     num: '03',
@@ -48,9 +52,9 @@ const PILLARS = [
         <circle cx="18.5" cy="18.5" r="2.5" />
       </svg>
     ),
-    accent: '#34d399',
-    gradient: 'linear-gradient(135deg, rgba(52, 211, 153, 0.15) 0%, rgba(37, 99, 235, 0.08) 100%)',
-    borderGlow: 'rgba(52, 211, 153, 0.35)',
+    accent: '#38bdf8',
+    gradient: 'linear-gradient(135deg, rgba(56, 189, 248, 0.15) 0%, rgba(37, 99, 235, 0.08) 100%)',
+    borderGlow: 'rgba(56, 189, 248, 0.35)',
   },
 ]
 

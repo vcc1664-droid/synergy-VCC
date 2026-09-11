@@ -59,22 +59,22 @@ const FAQS = [
 /* Right-side icons use `r` (CSS right) so they stay within bounds on every screen size */
 const FLOAT_ICONS = [
   // top band — left to right
-  { icon: '🍦', name: 'Ice Cream',      range: '−18°C & Below',      color: '#7ee7ff', l: '7%',  t: '13%' },
-  { icon: '🥩', name: 'Processed Meat', range: '−18°C & Below',      color: '#7ee7ff', l: '24%', t: '8%'  },
-  { icon: '🍎', name: 'Fruits',         range: '0° to 5°C',          color: '#97b2ff', l: '43%', t: '11%' },
-  { icon: '🍫', name: 'Chocolate',      range: '10° to 20°C',        color: '#e0e8ff', l: '60%', t: '8%'  },
-  { icon: '🦐', name: 'Frozen Seafood', range: '−18°C & Below',      color: '#7ee7ff', r: '15%', t: '13%' },
-  { icon: '🥛', name: 'Dairy',          range: '0° to 5°C',          color: '#97b2ff', r: '2%',  t: '9%'  },
+  { icon: '🍦', name: 'Ice Cream', range: '−18°C & Below', color: '#7ee7ff', l: '7%', t: '13%' },
+  { icon: '🥩', name: 'Processed Meat', range: '−18°C & Below', color: '#7ee7ff', l: '24%', t: '8%' },
+  { icon: '🍎', name: 'Fruits', range: '0° to 5°C', color: '#97b2ff', l: '43%', t: '11%' },
+  { icon: '🍫', name: 'Chocolate', range: '10° to 20°C', color: '#e0e8ff', l: '60%', t: '8%' },
+  { icon: '🦐', name: 'Frozen Seafood', range: '−18°C & Below', color: '#7ee7ff', r: '15%', t: '13%' },
+  { icon: '🥛', name: 'Dairy', range: '0° to 5°C', color: '#97b2ff', r: '2%', t: '9%' },
   // mid sides only — keep centre open
-  { icon: '🍌', name: 'Banana',         range: '8° to 10°C',         color: '#c4d4f0', l: '4%',  t: '44%' },
-  { icon: '🥤', name: 'Beverages',      range: '8° to 10°C',         color: '#c4d4f0', r: '2%',  t: '46%' },
+  { icon: '🍌', name: 'Banana', range: '8° to 10°C', color: '#c4d4f0', l: '4%', t: '44%' },
+  { icon: '🥤', name: 'Beverages', range: '8° to 10°C', color: '#c4d4f0', r: '2%', t: '46%' },
   // bottom band — left to right
-  { icon: '🌾', name: 'Food Grains',    range: 'Controlled Ambient', color: '#d8d9e4', l: '9%',  t: '80%' },
-  { icon: '🍞', name: 'Fresh Bakery',   range: '8° to 10°C',         color: '#c4d4f0', l: '27%', t: '74%' },
-  { icon: '🥡', name: 'Ready-to-eat',   range: '10° to 20°C',        color: '#e0e8ff', l: '45%', t: '83%' },
-  { icon: '🧃', name: 'Juices',         range: '0° to 5°C',          color: '#97b2ff', l: '62%', t: '76%' },
-  { icon: '🛒', name: 'FMCG',           range: 'Controlled Ambient', color: '#d8d9e4', r: '13%', t: '81%' },
-  { icon: '🌶️', name: 'Spices',         range: 'Dry Storage',        color: '#b0b2c8', r: '2%',  t: '73%' },
+  { icon: '🌾', name: 'Food Grains', range: 'Controlled Ambient', color: '#d8d9e4', l: '9%', t: '80%' },
+  { icon: '🍞', name: 'Fresh Bakery', range: '8° to 10°C', color: '#c4d4f0', l: '27%', t: '74%' },
+  { icon: '🥡', name: 'Ready-to-eat', range: '10° to 20°C', color: '#e0e8ff', l: '45%', t: '83%' },
+  { icon: '🧃', name: 'Juices', range: '0° to 5°C', color: '#97b2ff', l: '62%', t: '76%' },
+  { icon: '🛒', name: 'FMCG', range: 'Controlled Ambient', color: '#d8d9e4', r: '13%', t: '81%' },
+  { icon: '🌶️', name: 'Spices', range: 'Dry Storage', color: '#b0b2c8', r: '2%', t: '73%' },
 ]
 
 const N_ICONS = FLOAT_ICONS.length
@@ -88,13 +88,13 @@ const FLOAT_PARAMS = Array.from({ length: N_ICONS }, (_, i) => ({
 }))
 
 function TempZoneSection() {
-  const canvasRef  = useRef(null)
+  const canvasRef = useRef(null)
   const sectionRef = useRef(null)
-  const iconRefs   = useRef([])
-  const mouseRef   = useRef({ x: -9999, y: -9999 })
-  const velRef     = useRef(Array.from({ length: N_ICONS }, () => ({ x: 0, y: 0 })))
-  const posRef     = useRef(Array.from({ length: N_ICONS }, () => ({ x: 0, y: 0 })))
-  const rafRepel   = useRef(null)
+  const iconRefs = useRef([])
+  const mouseRef = useRef({ x: -9999, y: -9999 })
+  const velRef = useRef(Array.from({ length: N_ICONS }, () => ({ x: 0, y: 0 })))
+  const posRef = useRef(Array.from({ length: N_ICONS }, () => ({ x: 0, y: 0 })))
+  const rafRepel = useRef(null)
 
   /* ── canvas particles ── */
   useEffect(() => {
@@ -156,12 +156,12 @@ function TempZoneSection() {
     const tick = () => {
       iconRefs.current.forEach((el, i) => {
         if (!el) return
-        const r   = el.getBoundingClientRect()
+        const r = el.getBoundingClientRect()
         const sec = section.getBoundingClientRect()
-        const cx  = r.left + r.width / 2  - sec.left
-        const cy  = r.top  + r.height / 2 - sec.top
-        const dx  = mouseRef.current.x - cx
-        const dy  = mouseRef.current.y - cy
+        const cx = r.left + r.width / 2 - sec.left
+        const cy = r.top + r.height / 2 - sec.top
+        const dx = mouseRef.current.x - cx
+        const dy = mouseRef.current.y - cy
         const dist = Math.sqrt(dx * dx + dy * dy)
 
         let targetX = 0, targetY = 0
@@ -209,11 +209,11 @@ function TempZoneSection() {
             <div
               className="tz-fi-card"
               style={{
-                '--fd':  `${fp.dur}s`,
-                '--fdel':`${fp.del}s`,
+                '--fd': `${fp.dur}s`,
+                '--fdel': `${fp.del}s`,
                 '--frx': `${fp.rx}px`,
                 '--fry': `${fp.ry}px`,
-                '--frot':`${fp.rot}deg`,
+                '--frot': `${fp.rot}deg`,
                 borderColor: icon.color + '44',
               }}
             >
@@ -229,10 +229,10 @@ function TempZoneSection() {
       <div className="tz-center">
         <div className="tz-eyebrow">What We Store</div>
         <h2 className="tz-h2">
-          Every category.<br/>
+          Every category.<br />
           <span className="tz-accent">Every temperature.</span>
         </h2>
-       
+
       </div>
     </section>
   )

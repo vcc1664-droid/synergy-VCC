@@ -26,3 +26,12 @@ export function smoothScrollToTop() {
     window.scrollTo({ top: 0, behavior: 'smooth' })
   }
 }
+
+export function scrollToTop() {
+  const smoother = ScrollSmoother.get?.()
+  if (smoother) {
+    smoother.scrollTop(0)
+    smoother.scrollTo(0, false)
+  }
+  window.scrollTo({ top: 0, left: 0, behavior: 'instant' })
+}

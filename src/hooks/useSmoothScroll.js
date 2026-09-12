@@ -40,9 +40,15 @@ export default function useSmoothScroll() {
     }
   }, [])
 
-  // Recalculate trigger/content height whenever the route changes,
+  // Reset scroll to top and recalculate trigger/content height whenever the route changes,
   // since React Router swaps page content without a full reload.
   useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' })
+    const smoother = smootherRef.current || ScrollSmoother.get?.()
+    if (smoother) {
+      smoother.scrollTop(0)
+      smoother.scrollTo(0, false)
+    }
     const id = requestAnimationFrame(() => ScrollTrigger.refresh())
     return () => cancelAnimationFrame(id)
   }, [location.pathname])

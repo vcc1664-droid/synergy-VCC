@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Link, useNavigate, useLocation } from 'react-router-dom'
-import { smoothScrollToEl } from '../utils/smoothScroll'
+import { smoothScrollToEl, scrollToTop } from '../utils/smoothScroll'
 
 export default function Footer() {
   const navigate = useNavigate()
@@ -80,12 +80,12 @@ export default function Footer() {
             <div>
               <h3>Services</h3>
               <ul>
-                <li><Link to="/services">Storage &amp; Warehousing</Link></li>
-                <li><Link to="/services">Transportation &amp; Distribution</Link></li>
-                <li><Link to="/services">Inventory Management</Link></li>
-                <li><Link to="/services">Value-Added Services</Link></li>
-                <li><Link to="/services">Supply Chain Solutions</Link></li>
-                <li><Link to="/services">Technology &amp; Visibility</Link></li>
+                <li><Link to="/services" onClick={scrollToTop}>Storage &amp; Warehousing</Link></li>
+                <li><Link to="/services" onClick={scrollToTop}>Transportation &amp; Distribution</Link></li>
+                <li><Link to="/services" onClick={scrollToTop}>Inventory Management</Link></li>
+                <li><Link to="/services" onClick={scrollToTop}>Value-Added Services</Link></li>
+                <li><Link to="/services" onClick={scrollToTop}>Supply Chain Solutions</Link></li>
+                <li><Link to="/services" onClick={scrollToTop}>Technology &amp; Visibility</Link></li>
               </ul>
             </div>
             <div>

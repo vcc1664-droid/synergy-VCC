@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
+import { createPortal } from 'react-dom'
 import { gsap, prefersReducedMotion } from '../../lib/gsap'
 
 export default function HeroSection() {
@@ -9,7 +10,11 @@ export default function HeroSection() {
 
   useEffect(() => {
     if (prefersReducedMotion() || !vtBtnRef.current) return
-    gsap.from(vtBtnRef.current, { opacity: 0, y: 18, duration: 0.9, ease: 'power2.out', delay: 0.4 })
+    gsap.fromTo(
+      vtBtnRef.current,
+      { opacity: 0, y: 20 },
+      { opacity: 1, y: 0, duration: 0.8, ease: 'power2.out', delay: 0.3 }
+    )
   }, [])
 
   useEffect(() => {
@@ -41,7 +46,7 @@ export default function HeroSection() {
 
   return (
     <>
-      {tourOpen && (
+      {tourOpen && typeof document !== 'undefined' && createPortal(
         <div className="vt-overlay" onClick={() => setTourOpen(false)}>
           <div className="vt-box" onClick={e => e.stopPropagation()}>
             <button className="vt-close" onClick={() => setTourOpen(false)} aria-label="Close virtual tour">
@@ -55,11 +60,13 @@ export default function HeroSection() {
               src="/virtual-tour.mp4"
               poster="/virtual-tour-poster.jpg"
               controls
+              autoPlay
               playsInline
               preload="auto"
             />
           </div>
-        </div>
+        </div>,
+        document.body
       )}
 
       <section className="hs-wrap" id="hsWrap" style={{ position: 'relative' }}>
@@ -74,6 +81,14 @@ export default function HeroSection() {
           preload="none"
         />
         <div className="hs-video-overlay"></div>
+
+        <button className="hs-vt-btn" ref={vtBtnRef} onClick={() => setTourOpen(true)} aria-label="Open Virtual Tour">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" width="18" height="18">
+            <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2" />
+            <polygon points="10,8 16,12 10,16" fill="currentColor" />
+          </svg>
+          <span>Virtual Tour</span>
+        </button>
       </section>
 
       <h1 className="vh">

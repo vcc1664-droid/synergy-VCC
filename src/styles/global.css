@@ -11326,37 +11326,44 @@ footer .f-bottom {
 .hs-vt-btn {
   position: absolute;
   bottom: 28px;
-  right: 28px;
-  z-index: 20;
+  right: 96px;
+  z-index: 50;
   display: inline-flex;
   align-items: center;
   gap: 8px;
   padding: 12px 20px;
-  border-radius: 12px;
-  background: rgba(7, 15, 48, 0.75);
+  border-radius: 14px;
+  background: rgba(7, 15, 48, 0.88);
   color: #fff;
   font-family: 'Inter', system-ui, sans-serif;
   font-weight: 600;
-  font-size: 13px;
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  font-size: 13.5px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   cursor: pointer;
-  transition: background .2s, transform .2s;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+  transition: background .2s ease, transform .2s ease, border-color .2s ease;
   letter-spacing: .01em;
+  white-space: nowrap;
+}
+
+.hs-vt-btn svg {
+  flex-shrink: 0;
 }
 
 .hs-vt-btn:hover {
   background: rgba(7, 15, 48, 1);
+  border-color: rgba(255, 255, 255, 0.35);
   transform: translateY(-2px);
 }
 
-@media(max-width:480px) {
+@media(max-width: 768px) {
   .hs-vt-btn {
-    bottom: 16px;
-    right: 16px;
+    bottom: 96px;
+    right: 20px;
     padding: 10px 16px;
-    font-size: 12px
+    font-size: 12.5px;
   }
 }
 
@@ -11367,71 +11374,74 @@ footer .f-bottom {
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, .85);
-  z-index: 9999;
+  background: rgba(0, 0, 0, .8);
+  z-index: 9999999;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 16px;
+  padding: 24px;
   box-sizing: border-box;
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
-  animation: vt-in .22s ease;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  animation: vt-in .25s ease-out;
 }
 
 @keyframes vt-in {
   from {
-    opacity: 0
+    opacity: 0;
   }
 
   to {
-    opacity: 1
+    opacity: 1;
   }
 }
 
 .vt-box {
   position: relative;
   width: 100%;
-  max-width: 900px;
+  max-width: 920px;
   background: #000;
-  border-radius: 12px;
+  border-radius: 18px;
   overflow: hidden;
-  box-shadow: 0 24px 80px rgba(0, 0, 0, .8);
-  animation: vt-up .25s ease;
+  box-shadow: 0 24px 80px rgba(0, 0, 0, .85), 0 0 0 1px rgba(255, 255, 255, 0.12);
+  animation: vt-up .28s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 @keyframes vt-up {
   from {
-    transform: translateY(20px);
-    opacity: 0
+    transform: scale(0.96) translateY(14px);
+    opacity: 0;
   }
 
   to {
-    transform: translateY(0);
-    opacity: 1
+    transform: scale(1) translateY(0);
+    opacity: 1;
   }
 }
 
 .vt-close {
   position: absolute;
-  top: 10px;
-  right: 10px;
-  width: 36px;
-  height: 36px;
+  top: 14px;
+  right: 14px;
+  width: 38px;
+  height: 38px;
   border-radius: 50%;
-  background: rgba(0, 0, 0, .55);
-  border: 1px solid rgba(255, 255, 255, .2);
+  background: rgba(20, 20, 25, 0.75);
+  border: 1px solid rgba(255, 255, 255, .25);
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
   color: #fff;
   z-index: 10;
-  transition: background .15s;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition: background .2s ease, transform .2s ease;
 }
 
 .vt-close:hover {
-  background: rgba(0, 0, 0, .8)
+  background: rgba(0, 0, 0, 0.95);
+  transform: scale(1.08);
 }
 
 .vt-video {
@@ -11440,22 +11450,29 @@ footer .f-bottom {
   aspect-ratio: 16/9;
   background: #000;
   outline: none;
-  max-height: calc(100vh - 32px);
+  max-height: calc(90vh - 40px);
   object-fit: contain;
 }
 
-@media(max-width:480px) {
+@media(max-width: 480px) {
   .vt-overlay {
-    padding: 0
+    padding: 12px;
   }
 
   .vt-box {
-    border-radius: 0;
-    max-width: 100%
+    border-radius: 14px;
+    max-width: 100%;
+  }
+
+  .vt-close {
+    top: 10px;
+    right: 10px;
+    width: 32px;
+    height: 32px;
   }
 
   .vt-video {
-    max-height: 56vw
+    max-height: 56vw;
   }
 }
 

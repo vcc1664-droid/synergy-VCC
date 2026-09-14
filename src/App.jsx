@@ -10,6 +10,7 @@ import useScrollReveal from './hooks/useScrollReveal'
 
 const About = lazy(() => import('./pages/About'))
 const Services = lazy(() => import('./pages/Services'))
+const ServiceDetail = lazy(() => import('./pages/ServiceDetail'))
 const Facilities = lazy(() => import('./pages/Facilities'))
 const Edge = lazy(() => import('./pages/Edge'))
 const PrivacyPolicy = lazy(() => import('./pages/PrivacyPolicy'))
@@ -88,6 +89,7 @@ export default function App() {
                 <Route path="/" element={<Home />} />
                 <Route path="/about" element={<About />} />
                 <Route path="/services" element={<Services />} />
+                <Route path="/services/:slug" element={<ServiceDetail />} />
                 <Route path="/facilities" element={<Facilities />} />
                 <Route path="/edge" element={<Edge />} />
                 <Route path="/privacy-policy" element={<PrivacyPolicy />} />

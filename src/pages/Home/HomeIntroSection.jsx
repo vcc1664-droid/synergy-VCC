@@ -130,9 +130,9 @@ export default function HomeIntroSection() {
 
         .cch-title-accent {
           display: block;
-          color: #38bdf8;
+          color: #888FA2;
           font-weight: 800;
-          text-shadow: 0 0 35px rgba(56, 189, 248, 0.35), 0 3px 20px rgba(0, 0, 0, 0.85);
+          text-shadow: 0 3px 20px rgba(0, 0, 0, 0.85);
         }
 
         /* ── Subtitle Description ── */

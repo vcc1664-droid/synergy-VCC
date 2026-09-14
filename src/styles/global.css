@@ -375,6 +375,7 @@ html.has-smooth-scroll #smooth-content {
 
 .nav ul {
   display: flex;
+  align-items: center;
   gap: 28px;
   list-style: none;
   margin: 0;
@@ -385,8 +386,18 @@ html.has-smooth-scroll #smooth-content {
   font-family: 'Inter', system-ui, sans-serif
 }
 
+.nav ul li {
+  display: inline-flex;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
 .nav ul a {
+  display: inline-flex;
+  align-items: center;
   padding: 6px 0;
+  line-height: 1.2;
   transition: .2s;
   position: relative;
   opacity: .75
@@ -398,18 +409,9 @@ html.has-smooth-scroll #smooth-content {
 }
 
 .nav ul a.on {
-  opacity: 1
-}
-
-.nav ul a.on::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: -2px;
-  height: 2px;
-  background: #070f30;
-  border-radius: 2px
+  opacity: 1;
+  color: #070f30;
+  font-weight: 600;
 }
 
 .nav .cta {
@@ -2237,18 +2239,8 @@ footer .f-bottom {
 }
 
 .nav ul a.on {
-  color: var(--royal)
-}
-
-.nav ul a.on::after {
-  content: "";
-  position: absolute;
-  left: 14px;
-  right: 14px;
-  bottom: 2px;
-  height: 2px;
-  background: var(--royal);
-  border-radius: 2px;
+  color: var(--royal);
+  font-weight: 600;
 }
 
 /* ========== TRUCK ANIMATION SECTION ========== */

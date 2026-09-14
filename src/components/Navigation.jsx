@@ -61,7 +61,6 @@ const NAV_DROPDOWN_STYLES = `
   position: relative;
   display: inline-flex;
   align-items: center;
-  height: 100%;
 }
 
 .nav-dropdown-trigger {
@@ -70,6 +69,7 @@ const NAV_DROPDOWN_STYLES = `
   gap: 5px;
   cursor: pointer;
   padding: 6px 0;
+  line-height: 1.2;
 }
 
 .nav-dropdown-chevron {
@@ -77,6 +77,8 @@ const NAV_DROPDOWN_STYLES = `
   height: 12px;
   transition: transform 0.22s ease;
   opacity: 0.75;
+  display: inline-block;
+  flex-shrink: 0;
 }
 
 .nav-item-dropdown:hover .nav-dropdown-chevron,

@@ -6,13 +6,13 @@ import { smoothScrollToEl, smoothScrollToTop } from '../utils/smoothScroll'
 
 const SERVICE_DETAIL_STYLES = `
 /* ==========================================================================
-   SERVICE DETAIL PAGE STYLES
+   SERVICE DETAIL PAGE STYLES — VCC LIGHT THEME (HOMEPAGE ALIGNED)
    ========================================================================== */
 
 .sd-page {
   position: relative;
-  background-color: #060c23;
-  color: #e2e8f0;
+  background-color: #f7f8fb;
+  color: #070f30;
   font-family: var(--body, 'Inter', -apple-system, BlinkMacSystemFont, sans-serif);
   overflow-x: hidden;
   padding-bottom: 50px;
@@ -21,10 +21,11 @@ const SERVICE_DETAIL_STYLES = `
 /* ── Hero Section ── */
 .sd-hero {
   position: relative;
-  padding: 130px 24px 70px 24px;
-  background: radial-gradient(ellipse at 50% 15%, #182357 0%, #0d163d 50%, #060c23 100%);
+  padding: 140px 24px 75px 24px;
+  background: radial-gradient(ellipse at 50% 15%, #182357 0%, #0d163d 50%, #070f30 100%);
   border-bottom: 1px solid rgba(56, 189, 248, 0.12);
   overflow: hidden;
+  color: #ffffff;
 }
 
 .sd-hero-glow {
@@ -32,9 +33,9 @@ const SERVICE_DETAIL_STYLES = `
   top: 10%;
   left: 50%;
   transform: translateX(-50%);
-  width: 600px;
-  height: 400px;
-  background: radial-gradient(circle, rgba(56, 189, 248, 0.15) 0%, transparent 70%);
+  width: 650px;
+  height: 420px;
+  background: radial-gradient(circle, rgba(56, 189, 248, 0.16) 0%, transparent 70%);
   filter: blur(60px);
   pointer-events: none;
   z-index: 1;
@@ -53,12 +54,12 @@ const SERVICE_DETAIL_STYLES = `
   align-items: center;
   gap: 8px;
   font-size: 0.85rem;
-  color: rgba(203, 213, 225, 0.7);
+  color: rgba(203, 213, 225, 0.75);
   margin-bottom: 24px;
 }
 
 .sd-breadcrumbs a {
-  color: rgba(203, 213, 225, 0.8);
+  color: rgba(203, 213, 225, 0.85);
   text-decoration: none;
   transition: color 0.2s ease;
 }
@@ -72,20 +73,27 @@ const SERVICE_DETAIL_STYLES = `
   font-weight: 600;
 }
 
+/* Badge (Light vs Dark Context) */
 .sd-badge {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 5px 14px;
+  padding: 6px 14px;
   border-radius: 999px;
-  background: rgba(56, 189, 248, 0.08);
-  border: 1px solid rgba(56, 189, 248, 0.28);
-  color: #38bdf8;
+  background: rgba(2, 132, 199, 0.08);
+  border: 1px solid rgba(2, 132, 199, 0.25);
+  color: #0284c7;
   font-size: 0.82rem;
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   margin-bottom: 18px;
+}
+
+.sd-hero .sd-badge {
+  background: rgba(56, 189, 248, 0.08);
+  border: 1px solid rgba(56, 189, 248, 0.28);
+  color: #38bdf8;
 }
 
 .sd-title {
@@ -100,14 +108,14 @@ const SERVICE_DETAIL_STYLES = `
 
 .sd-title .accent {
   display: block;
-  color: #888FA2;
+  color: #93c5fd;
   font-weight: 800;
 }
 
 .sd-tagline {
   font-size: clamp(1.02rem, 1.25vw, 1.16rem);
   line-height: 1.68;
-  color: rgba(226, 232, 240, 0.85);
+  color: rgba(226, 232, 240, 0.88);
   max-width: 780px;
   margin-bottom: 32px;
 }
@@ -126,23 +134,22 @@ const SERVICE_DETAIL_STYLES = `
   justify-content: center;
   padding: 13px 30px;
   border-radius: 999px;
-  background: #0f1c48;
-  color: #ffffff;
-  font-weight: 600;
+  background: #38bdf8;
+  color: #070f30;
+  font-weight: 700;
   font-size: 0.96rem;
   text-decoration: none;
-  border: 1px solid rgba(56, 189, 248, 0.45);
-  box-shadow: 0 0 20px rgba(56, 189, 248, 0.22);
+  border: 1px solid rgba(56, 189, 248, 0.8);
+  box-shadow: 0 0 24px rgba(56, 189, 248, 0.35);
   transition: all 0.25s ease;
   cursor: pointer;
 }
 
 .sd-btn-primary:hover {
-  background: #172a6b;
-  border-color: #38bdf8;
-  box-shadow: 0 0 30px rgba(56, 189, 248, 0.4);
+  background: #7dd3fc;
+  box-shadow: 0 0 35px rgba(56, 189, 248, 0.5);
   transform: translateY(-2px);
-  color: #ffffff;
+  color: #070f30;
 }
 
 .sd-btn-secondary {
@@ -151,20 +158,20 @@ const SERVICE_DETAIL_STYLES = `
   justify-content: center;
   padding: 13px 26px;
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.05);
-  color: #cbd5e1;
-  font-weight: 500;
+  background: rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+  font-weight: 600;
   font-size: 0.96rem;
   text-decoration: none;
-  border: 1px solid rgba(255, 255, 255, 0.14);
+  border: 1px solid rgba(255, 255, 255, 0.22);
   transition: all 0.25s ease;
   cursor: pointer;
 }
 
 .sd-btn-secondary:hover {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.16);
   color: #ffffff;
-  border-color: rgba(255, 255, 255, 0.3);
+  border-color: rgba(255, 255, 255, 0.4);
   transform: translateY(-2px);
 }
 
@@ -174,12 +181,12 @@ const SERVICE_DETAIL_STYLES = `
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 16px;
   padding-top: 24px;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .sd-stat-card {
-  background: rgba(13, 22, 53, 0.6);
-  border: 1px solid rgba(56, 189, 248, 0.15);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 14px;
   padding: 16px 20px;
   backdrop-filter: blur(10px);
@@ -187,7 +194,7 @@ const SERVICE_DETAIL_STYLES = `
 
 .sd-stat-lbl {
   font-size: 0.76rem;
-  color: rgba(148, 163, 184, 0.85);
+  color: rgba(203, 213, 225, 0.75);
   text-transform: uppercase;
   letter-spacing: 0.06em;
   margin-bottom: 4px;
@@ -200,13 +207,49 @@ const SERVICE_DETAIL_STYLES = `
   color: #38bdf8;
 }
 
-/* ── Overview Section ── */
+/* ── Standard Section Base ── */
 .sd-sec {
-  padding: 80px 24px;
+  padding: 90px 24px;
   position: relative;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(7, 15, 48, 0.06);
 }
 
+.sd-sec.bg-white {
+  background-color: #ffffff;
+}
+
+.sd-sec.bg-ice {
+  background-color: #f7f8fb;
+}
+
+.sd-sec-head {
+  text-align: center;
+  max-width: 740px;
+  margin: 0 auto 50px auto;
+}
+
+.sd-sec-title {
+  font-family: var(--display, 'Satoshi', sans-serif);
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  font-weight: 800;
+  color: #070f30;
+  margin: 0 0 12px 0;
+  letter-spacing: -0.02em;
+}
+
+.sd-sec-title .accent {
+  display: block;
+  color: #64748b;
+  font-weight: 800;
+}
+
+.sd-sec-sub {
+  font-size: 1.02rem;
+  color: #64748b;
+  line-height: 1.65;
+}
+
+/* ── Overview Section ── */
 .sd-overview-grid {
   display: grid;
   grid-template-columns: 1.1fr 1fr;
@@ -218,14 +261,16 @@ const SERVICE_DETAIL_STYLES = `
   font-family: var(--display, 'Satoshi', sans-serif);
   font-size: clamp(1.8rem, 3vw, 2.5rem);
   font-weight: 800;
-  color: #ffffff;
+  color: #070f30;
   margin: 0 0 20px 0;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
 }
 
 .sd-overview-text p {
-  font-size: 1rem;
+  font-size: 1.02rem;
   line-height: 1.74;
-  color: rgba(226, 232, 240, 0.82);
+  color: #475569;
   margin-bottom: 20px;
 }
 
@@ -233,8 +278,8 @@ const SERVICE_DETAIL_STYLES = `
   position: relative;
   border-radius: 24px;
   overflow: hidden;
-  border: 1px solid rgba(56, 189, 248, 0.22);
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6), 0 0 35px rgba(56, 189, 248, 0.12);
+  border: 1px solid rgba(7, 15, 48, 0.08);
+  box-shadow: 0 20px 45px rgba(7, 15, 48, 0.08);
   aspect-ratio: 16 / 11;
 }
 
@@ -248,17 +293,19 @@ const SERVICE_DETAIL_STYLES = `
   position: absolute;
   bottom: 18px;
   left: 18px;
-  background: rgba(6, 12, 35, 0.9);
+  background: rgba(7, 15, 48, 0.92);
   border: 1px solid rgba(56, 189, 248, 0.35);
   border-radius: 12px;
   padding: 10px 16px;
   backdrop-filter: blur(10px);
+  color: #ffffff;
 }
 
 .sd-img-badge-lbl {
   font-size: 0.72rem;
   color: #94a3b8;
   text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
 .sd-img-badge-val {
@@ -268,32 +315,6 @@ const SERVICE_DETAIL_STYLES = `
 }
 
 /* ── Capabilities Section ── */
-.sd-sec-head {
-  text-align: center;
-  max-width: 720px;
-  margin: 0 auto 50px auto;
-}
-
-.sd-sec-title {
-  font-family: var(--display, 'Satoshi', sans-serif);
-  font-size: clamp(1.8rem, 3vw, 2.5rem);
-  font-weight: 800;
-  color: #ffffff;
-  margin: 0 0 12px 0;
-}
-
-.sd-sec-title .accent {
-  display: block;
-  color: #888FA2;
-  font-weight: 800;
-}
-
-.sd-sec-sub {
-  font-size: 1rem;
-  color: rgba(226, 232, 240, 0.75);
-  line-height: 1.65;
-}
-
 .sd-caps-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -301,31 +322,30 @@ const SERVICE_DETAIL_STYLES = `
 }
 
 .sd-cap-card {
-  background: rgba(13, 22, 53, 0.7);
-  border: 1px solid rgba(56, 189, 248, 0.15);
+  background: #ffffff;
+  border: 1px solid rgba(7, 15, 48, 0.08);
   border-radius: 20px;
   padding: 34px 28px;
   transition: all 0.3s ease;
-  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 20px rgba(7, 15, 48, 0.03);
 }
 
 .sd-cap-card:hover {
   transform: translateY(-5px);
-  border-color: rgba(56, 189, 248, 0.4);
-  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.4), 0 0 25px rgba(56, 189, 248, 0.15);
-  background: rgba(17, 28, 68, 0.85);
+  border-color: rgba(2, 132, 199, 0.35);
+  box-shadow: 0 16px 36px rgba(7, 15, 48, 0.08), 0 0 20px rgba(2, 132, 199, 0.06);
 }
 
 .sd-cap-icon-box {
   width: 52px;
   height: 52px;
   border-radius: 14px;
-  background: rgba(56, 189, 248, 0.1);
-  border: 1px solid rgba(56, 189, 248, 0.3);
+  background: rgba(2, 132, 199, 0.08);
+  border: 1px solid rgba(2, 132, 199, 0.22);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #38bdf8;
+  color: #0284c7;
   margin-bottom: 20px;
   font-size: 1.4rem;
 }
@@ -334,14 +354,14 @@ const SERVICE_DETAIL_STYLES = `
   font-family: var(--display, 'Satoshi', sans-serif);
   font-size: 1.25rem;
   font-weight: 700;
-  color: #ffffff;
+  color: #070f30;
   margin: 0 0 10px 0;
 }
 
 .sd-cap-desc {
-  font-size: 0.94rem;
+  font-size: 0.95rem;
   line-height: 1.68;
-  color: rgba(203, 213, 225, 0.8);
+  color: #475569;
   margin: 0;
 }
 
@@ -353,21 +373,29 @@ const SERVICE_DETAIL_STYLES = `
 }
 
 .sd-process-card {
-  background: rgba(13, 22, 53, 0.6);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: #ffffff;
+  border: 1px solid rgba(7, 15, 48, 0.08);
   border-radius: 18px;
   padding: 28px 22px;
   position: relative;
   display: flex;
   flex-direction: column;
+  box-shadow: 0 4px 18px rgba(7, 15, 48, 0.03);
+  transition: all 0.3s ease;
+}
+
+.sd-process-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 30px rgba(7, 15, 48, 0.08);
+  border-color: rgba(2, 132, 199, 0.3);
 }
 
 .sd-process-num {
   font-family: var(--display, 'Satoshi', sans-serif);
   font-size: 2.2rem;
   font-weight: 800;
-  color: #38bdf8;
-  opacity: 0.6;
+  color: #0284c7;
+  opacity: 0.85;
   margin-bottom: 14px;
 }
 
@@ -375,25 +403,25 @@ const SERVICE_DETAIL_STYLES = `
   font-family: var(--display, 'Satoshi', sans-serif);
   font-size: 1.12rem;
   font-weight: 700;
-  color: #ffffff;
+  color: #070f30;
   margin: 0 0 10px 0;
 }
 
 .sd-process-desc {
-  font-size: 0.88rem;
+  font-size: 0.9rem;
   line-height: 1.65;
-  color: rgba(203, 213, 225, 0.78);
+  color: #64748b;
   margin: 0;
 }
 
 /* ── Technical Specifications Table ── */
 .sd-specs-box {
-  background: rgba(10, 18, 44, 0.8);
-  border: 1px solid rgba(56, 189, 248, 0.2);
-  border-radius: 20px;
-  padding: 36px;
-  backdrop-filter: blur(12px);
-  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.4);
+  background: #070f30;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 24px;
+  padding: 38px;
+  box-shadow: 0 20px 50px rgba(7, 15, 48, 0.12);
+  color: #ffffff;
 }
 
 .sd-specs-grid {
@@ -403,8 +431,8 @@ const SERVICE_DETAIL_STYLES = `
 }
 
 .sd-spec-item {
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.09);
   border-radius: 14px;
   padding: 18px 20px;
 }
@@ -423,60 +451,6 @@ const SERVICE_DETAIL_STYLES = `
   color: #ffffff;
 }
 
-/* ── Other Services Navigation ── */
-.sd-other-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 22px;
-}
-
-.sd-other-card {
-  background: rgba(13, 22, 53, 0.6);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 16px;
-  overflow: hidden;
-  text-decoration: none;
-  transition: all 0.3s ease;
-  display: flex;
-  flex-direction: column;
-}
-
-.sd-other-card:hover {
-  transform: translateY(-5px);
-  border-color: rgba(56, 189, 248, 0.35);
-  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.4);
-}
-
-.sd-other-img {
-  width: 100%;
-  height: 140px;
-  object-fit: cover;
-}
-
-.sd-other-body {
-  padding: 18px 20px;
-}
-
-.sd-other-num {
-  font-size: 0.78rem;
-  color: #38bdf8;
-  font-weight: 700;
-  margin-bottom: 4px;
-}
-
-.sd-other-title {
-  font-family: var(--display, 'Satoshi', sans-serif);
-  font-size: 1.15rem;
-  font-weight: 700;
-  color: #ffffff;
-  margin: 0 0 6px 0;
-}
-
-.sd-other-sub {
-  font-size: 0.84rem;
-  color: rgba(203, 213, 225, 0.7);
-}
-
 /* ── FAQ Accordion ── */
 .sd-faq-list {
   max-width: 860px;
@@ -487,16 +461,17 @@ const SERVICE_DETAIL_STYLES = `
 }
 
 .sd-faq-item {
-  background: rgba(13, 22, 53, 0.6);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: #ffffff;
+  border: 1px solid rgba(7, 15, 48, 0.08);
   border-radius: 16px;
   overflow: hidden;
   transition: all 0.25s ease;
+  box-shadow: 0 2px 8px rgba(7, 15, 48, 0.02);
 }
 
 .sd-faq-item.active {
-  border-color: rgba(56, 189, 248, 0.35);
-  background: rgba(16, 27, 65, 0.85);
+  border-color: rgba(2, 132, 199, 0.35);
+  box-shadow: 0 8px 24px rgba(7, 15, 48, 0.06);
 }
 
 .sd-faq-q {
@@ -513,16 +488,16 @@ const SERVICE_DETAIL_STYLES = `
   font-family: var(--display, 'Satoshi', sans-serif);
   font-size: 1.05rem;
   font-weight: 700;
-  color: #ffffff;
+  color: #070f30;
 }
 
 .sd-faq-toggle {
   width: 28px;
   height: 28px;
   border-radius: 50%;
-  background: rgba(56, 189, 248, 0.1);
-  border: 1px solid rgba(56, 189, 248, 0.25);
-  color: #38bdf8;
+  background: rgba(7, 15, 48, 0.05);
+  border: 1px solid rgba(7, 15, 48, 0.1);
+  color: #070f30;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -534,27 +509,84 @@ const SERVICE_DETAIL_STYLES = `
 
 .sd-faq-item.active .sd-faq-toggle {
   transform: rotate(45deg);
-  background: #38bdf8;
-  color: #060c23;
+  background: #0284c7;
+  color: #ffffff;
+  border-color: #0284c7;
 }
 
 .sd-faq-a {
   padding: 0 24px 20px 24px;
-  font-size: 0.94rem;
+  font-size: 0.95rem;
   line-height: 1.7;
-  color: rgba(226, 232, 240, 0.82);
+  color: #475569;
+}
+
+/* ── Other Services Navigation ── */
+.sd-other-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.sd-other-card {
+  background: #ffffff;
+  border: 1px solid rgba(7, 15, 48, 0.08);
+  border-radius: 18px;
+  overflow: hidden;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 18px rgba(7, 15, 48, 0.03);
+}
+
+.sd-other-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(2, 132, 199, 0.35);
+  box-shadow: 0 16px 36px rgba(7, 15, 48, 0.09);
+}
+
+.sd-other-img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+.sd-other-body {
+  padding: 20px 22px;
+}
+
+.sd-other-num {
+  font-size: 0.78rem;
+  color: #0284c7;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.sd-other-title {
+  font-family: var(--display, 'Satoshi', sans-serif);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #070f30;
+  margin: 0 0 6px 0;
+}
+
+.sd-other-sub {
+  font-size: 0.85rem;
+  color: #64748b;
 }
 
 /* ── CTA Banner ── */
 .sd-cta-card {
   border-radius: 26px;
-  background: radial-gradient(ellipse at 50% 20%, #15225c 0%, #0b1335 70%, #060b20 100%);
-  border: 1px solid rgba(56, 189, 248, 0.25);
-  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6), 0 0 40px rgba(56, 189, 248, 0.12);
+  background: radial-gradient(ellipse at 50% 20%, #16225a 0%, #070f30 70%, #03081e 100%);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 25px 60px rgba(7, 15, 48, 0.15);
   padding: 56px 36px;
   text-align: center;
   position: relative;
   overflow: hidden;
+  color: #ffffff;
 }
 
 .sd-cta-title {
@@ -567,13 +599,13 @@ const SERVICE_DETAIL_STYLES = `
 
 .sd-cta-title .accent {
   display: block;
-  color: #888FA2;
+  color: #93c5fd;
   font-weight: 800;
 }
 
 .sd-cta-desc {
   font-size: 1.02rem;
-  color: rgba(226, 232, 240, 0.82);
+  color: rgba(226, 232, 240, 0.85);
   max-width: 620px;
   margin: 0 auto 32px auto;
   line-height: 1.68;
@@ -609,6 +641,9 @@ const SERVICE_DETAIL_STYLES = `
 @media (max-width: 768px) {
   .sd-hero {
     padding-top: 100px;
+  }
+  .sd-sec {
+    padding: 60px 18px;
   }
   .sd-process-grid {
     grid-template-columns: 1fr;
@@ -730,7 +765,7 @@ export default function ServiceDetail() {
       </section>
 
       {/* ── 2. Detailed Overview ── */}
-      <section className="sd-sec">
+      <section className="sd-sec bg-white">
         <div className="sd-wrap">
           <div className="sd-overview-grid">
             <div className="sd-overview-text">
@@ -738,7 +773,7 @@ export default function ServiceDetail() {
                 Service Overview
               </div>
               <h2>
-                Engineered for uncompromising <span style={{ color: '#38bdf8' }}>thermal integrity.</span>
+                Engineered for uncompromising <span style={{ color: '#98A3B3' }}>thermal integrity.</span>
               </h2>
               {service.overview.map((para, idx) => (
                 <p key={idx}>{para}</p>
@@ -769,7 +804,7 @@ export default function ServiceDetail() {
       </section>
 
       {/* ── 3. Key Capabilities ── */}
-      <section className="sd-sec" style={{ background: 'rgba(10, 18, 44, 0.5)' }}>
+      <section className="sd-sec bg-ice">
         <div className="sd-wrap">
           <div className="sd-sec-head">
             <div className="sd-badge" style={{ marginBottom: 12 }}>Capabilities</div>
@@ -797,7 +832,7 @@ export default function ServiceDetail() {
       </section>
 
       {/* ── 4. Process Workflow ── */}
-      <section className="sd-sec">
+      <section className="sd-sec bg-white">
         <div className="sd-wrap">
           <div className="sd-sec-head">
             <div className="sd-badge" style={{ marginBottom: 12 }}>Execution Process</div>
@@ -823,7 +858,7 @@ export default function ServiceDetail() {
       </section>
 
       {/* ── 5. Technical Specifications Grid ── */}
-      <section className="sd-sec" style={{ background: 'rgba(10, 18, 44, 0.4)' }}>
+      <section className="sd-sec bg-ice">
         <div className="sd-wrap">
           <div className="sd-sec-head">
             <div className="sd-badge" style={{ marginBottom: 12 }}>Specifications</div>
@@ -847,7 +882,7 @@ export default function ServiceDetail() {
       </section>
 
       {/* ── 6. Service-Specific FAQs ── */}
-      <section className="sd-sec">
+      <section className="sd-sec bg-white">
         <div className="sd-wrap">
           <div className="sd-sec-head">
             <div className="sd-badge" style={{ marginBottom: 12 }}>FAQ</div>
@@ -882,7 +917,7 @@ export default function ServiceDetail() {
       </section>
 
       {/* ── 7. Explore Other Services ── */}
-      <section className="sd-sec" style={{ background: 'rgba(10, 18, 44, 0.5)' }}>
+      <section className="sd-sec bg-ice">
         <div className="sd-wrap">
           <div className="sd-sec-head">
             <div className="sd-badge" style={{ marginBottom: 12 }}>Explore More</div>
@@ -921,7 +956,7 @@ export default function ServiceDetail() {
       </section>
 
       {/* ── 8. Closing CTA ── */}
-      <section className="sd-sec" style={{ borderBottom: 'none' }}>
+      <section className="sd-sec bg-white" style={{ borderBottom: 'none' }}>
         <div className="sd-wrap">
           <div className="sd-cta-card">
             <h2 className="sd-cta-title">

@@ -6,57 +6,17 @@ export default function HomeIntroSection() {
       <style>{`
         .cold-chain-hero {
           position: relative;
-          background-color: #03081e;
-          background-image: url('/cold-chain-hero-bg.jpg');
-          background-size: cover;
-          background-position: center center;
-          background-repeat: no-repeat;
-          color: #ffffff;
-          padding: clamp(80px, 11vh, 140px) 20px clamp(90px, 12vh, 150px);
+          background-color: #ffffff;
+          color: #071952;
+          padding: clamp(70px, 9vh, 120px) 20px clamp(75px, 10vh, 130px);
           display: flex;
           align-items: center;
           justify-content: center;
           overflow: hidden;
           z-index: 5;
           box-sizing: border-box;
-        }
-
-        /* Ambient Lighting and Vignette Overlays */
-        .cold-chain-hero::before {
-          content: '';
-          position: absolute;
-          inset: 0;
-          background: radial-gradient(
-            circle at 50% 28%,
-            rgba(2, 44, 90, 0.48) 0%,
-            rgba(4, 18, 48, 0.65) 45%,
-            rgba(3, 8, 25, 0.88) 100%
-          );
-          pointer-events: none;
-          z-index: 1;
-        }
-
-        /* Top and Bottom Seamless Edge Blends */
-        .cch-fade-top {
-          position: absolute;
-          top: 0;
-          left: 0;
-          right: 0;
-          height: 100px;
-          background: linear-gradient(to bottom, #070f30 0%, transparent 100%);
-          z-index: 2;
-          pointer-events: none;
-        }
-
-        .cch-fade-bottom {
-          position: absolute;
-          bottom: 0;
-          left: 0;
-          right: 0;
-          height: 110px;
-          background: linear-gradient(to top, #070f30 0%, transparent 100%);
-          z-index: 2;
-          pointer-events: none;
+          border-top: 1px solid #e2e8f0;
+          border-bottom: 1px solid #e2e8f0;
         }
 
         /* Central Content Container */
@@ -78,25 +38,25 @@ export default function HomeIntroSection() {
           align-items: center;
           justify-content: center;
           gap: 16px;
-          margin-bottom: 24px;
+          margin-bottom: 22px;
           font-family: var(--display, 'Satoshi', sans-serif);
           font-size: clamp(0.78rem, 1.1vw, 0.92rem);
           font-weight: 700;
           letter-spacing: 0.28em;
           text-transform: uppercase;
-          color: #93c5fd;
+          color: #888FA2;
           user-select: none;
         }
 
         .cch-eyebrow-line {
           width: clamp(40px, 6vw, 75px);
           height: 1.5px;
-          background: linear-gradient(90deg, transparent, rgba(56, 189, 248, 0.75));
+          background: linear-gradient(90deg, transparent, #888FA2);
           border-radius: 2px;
         }
 
         .cch-eyebrow-line.right {
-          background: linear-gradient(90deg, rgba(56, 189, 248, 0.75), transparent);
+          background: linear-gradient(90deg, #888FA2, transparent);
         }
 
         .cch-snowflake-glow {
@@ -106,14 +66,13 @@ export default function HomeIntroSection() {
           justify-content: center;
           width: 26px;
           height: 26px;
-          color: #38bdf8;
-          filter: drop-shadow(0 0 10px rgba(56, 189, 248, 0.95)) drop-shadow(0 0 20px rgba(56, 189, 248, 0.5));
+          color: #888FA2;
           animation: cch-pulse 3s ease-in-out infinite alternate;
         }
 
         @keyframes cch-pulse {
-          0% { filter: drop-shadow(0 0 8px rgba(56, 189, 248, 0.8)); transform: scale(0.97); }
-          100% { filter: drop-shadow(0 0 14px rgba(56, 189, 248, 1)) drop-shadow(0 0 24px rgba(56, 189, 248, 0.6)); transform: scale(1.03); }
+          0% { transform: scale(0.97); }
+          100% { transform: scale(1.05); }
         }
 
         /* ── Main Headline ── */
@@ -123,16 +82,14 @@ export default function HomeIntroSection() {
           font-weight: 800;
           line-height: 1.16;
           letter-spacing: -0.025em;
-          margin: 0 0 22px 0;
-          color: #ffffff;
-          text-shadow: 0 3px 20px rgba(0, 0, 0, 0.85);
+          margin: 0 0 20px 0;
+          color: #071952;
         }
 
         .cch-title-accent {
           display: block;
           color: #888FA2;
           font-weight: 800;
-          text-shadow: 0 3px 20px rgba(0, 0, 0, 0.85);
         }
 
         /* ── Subtitle Description ── */
@@ -140,11 +97,10 @@ export default function HomeIntroSection() {
           font-family: var(--body, 'Inter', -apple-system, BlinkMacSystemFont, sans-serif);
           font-size: clamp(0.98rem, 1.22vw, 1.14rem);
           line-height: 1.68;
-          font-weight: 400;
-          color: rgba(224, 237, 255, 0.9);
+          font-weight: 450;
+          color: #334155;
           max-width: 820px;
-          margin: 0 auto 52px auto;
-          text-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
+          margin: 0 auto 50px auto;
         }
 
         /* ── 4 Pillar Feature Badges ── */
@@ -173,27 +129,26 @@ export default function HomeIntroSection() {
           transform: translateY(-4px);
         }
 
-        /* Glowing Circular Icon Container */
+        /* Circular Icon Container */
         .cch-icon-circle {
           width: clamp(62px, 6vw, 76px);
           height: clamp(62px, 6vw, 76px);
           border-radius: 50%;
-          background: radial-gradient(circle at 35% 35%, rgba(15, 45, 95, 0.92) 0%, rgba(4, 15, 38, 0.98) 100%);
-          border: 2px solid #0284c7;
-          box-shadow: 0 0 16px rgba(56, 189, 248, 0.35), inset 0 0 12px rgba(56, 189, 248, 0.2);
+          background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+          border: 2px solid #888FA2;
           display: flex;
           align-items: center;
           justify-content: center;
-          color: #ffffff;
+          color: #888FA2;
           margin-bottom: 16px;
-          transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+          transition: all 0.3s ease;
         }
 
         .cch-feature-item:hover .cch-icon-circle {
-          border-color: #38bdf8;
-          box-shadow: 0 0 24px rgba(56, 189, 248, 0.65), inset 0 0 16px rgba(56, 189, 248, 0.35);
-          color: #e0f2fe;
-          transform: scale(1.05);
+          border-color: #64748b;
+          background: #888FA2;
+          color: #ffffff;
+          transform: scale(1.06);
         }
 
         .cch-icon-circle svg {
@@ -208,9 +163,8 @@ export default function HomeIntroSection() {
           font-size: clamp(0.88rem, 1.1vw, 1.02rem);
           font-weight: 700;
           line-height: 1.35;
-          color: #ffffff;
+          color: #071952;
           letter-spacing: -0.01em;
-          text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
         }
 
         .cch-feature-label span {
@@ -224,9 +178,9 @@ export default function HomeIntroSection() {
           height: 64px;
           background: linear-gradient(
             to bottom,
-            rgba(56, 189, 248, 0.05) 0%,
-            rgba(56, 189, 248, 0.45) 50%,
-            rgba(56, 189, 248, 0.05) 100%
+            rgba(136, 143, 162, 0.05) 0%,
+            rgba(136, 143, 162, 0.35) 50%,
+            rgba(136, 143, 162, 0.05) 100%
           );
           margin-top: 6px;
           flex-shrink: 0;
@@ -252,14 +206,14 @@ export default function HomeIntroSection() {
 
         @media (max-width: 520px) {
           .cold-chain-hero {
-            padding: 60px 16px 80px;
+            padding: 55px 16px 70px;
           }
 
           .cch-eyebrow {
             gap: 10px;
             font-size: 0.72rem;
             letter-spacing: 0.18em;
-            margin-bottom: 18px;
+            margin-bottom: 16px;
           }
 
           .cch-eyebrow-line {
@@ -267,7 +221,7 @@ export default function HomeIntroSection() {
           }
 
           .cch-title {
-            margin-bottom: 16px;
+            margin-bottom: 14px;
           }
 
           .cch-features-row {
@@ -287,10 +241,6 @@ export default function HomeIntroSection() {
       `}</style>
 
       <section className="cold-chain-hero" id="cold-chain-precision">
-        {/* Edge gradient fades for seamless transitions */}
-        <div className="cch-fade-top" aria-hidden="true" />
-        <div className="cch-fade-bottom" aria-hidden="true" />
-
         <div className="cch-container">
           {/* ── Top Eyebrow Badge ── */}
           <div className="cch-eyebrow" aria-label="Cold Chain Logistics">

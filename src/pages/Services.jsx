@@ -60,7 +60,7 @@ const TEMP_CATEGORIES = [
     tab: 'Deep Frozen (−25°C to −18°C)',
     badge: 'Deep Frozen',
     temp: '−25°C to −18°C',
-    color: '#38bdf8',
+    color: '#888FA2',
     icon: '❄️',
     desc: 'Designed for ice creams, seafood, processed meats, and ultra-cold frozen formulations requiring zero ice crystallization and unbroken thermal hold.',
     items: ['Ice Creams & Gelato', 'Frozen Seafood & Prawns', 'Processed & Dressed Meats', 'Frozen Dough & Ready Meals', 'Biological Samples & Plasma'],
@@ -71,7 +71,7 @@ const TEMP_CATEGORIES = [
     tab: 'Chilled (0°C to +5°C)',
     badge: 'Chilled Storage',
     temp: '0°C to +5°C',
-    color: '#60a5fa',
+    color: '#888FA2',
     icon: '🥛',
     desc: 'Optimal micro-climate for dairy, fresh fruits, leafy vegetables, vaccines, and biologics where exact humidity and temperature control prevent spoilage.',
     items: ['Milk, Cheese & Butter', 'Fresh Fruits & Vegetables', 'Poultry & Fresh Meats', 'Cold-Pressed Juices', 'Vaccines & Biologics'],
@@ -82,7 +82,7 @@ const TEMP_CATEGORIES = [
     tab: 'Controlled Ambient (+10°C to +25°C)',
     badge: 'Controlled Ambient',
     temp: '+10°C to +25°C',
-    color: '#93c5fd',
+    color: '#888FA2',
     icon: '🍫',
     desc: 'Stabilized environment for temperature-sensitive confectioneries, premium chocolates, specialty bakery, and dry pharmaceuticals.',
     items: ['Fine Chocolates & Cocoa', 'Confectionery & Candies', 'Specialty Bakery Goods', 'Pharmaceutical Formulations', 'Specialty Seeds & Grains'],
@@ -126,7 +126,7 @@ const SERVICES_PAGE_STYLES = `
   color: #e2e8f0;
   font-family: var(--body, 'Inter', -apple-system, BlinkMacSystemFont, sans-serif);
   overflow-x: hidden;
-  padding-bottom: 40px;
+  padding-bottom: 0;
 }
 
 /* ── Celestial Hero Section ── */
@@ -173,8 +173,6 @@ const SERVICES_PAGE_STYLES = `
   width: 38px;
   height: 38px;
   border-radius: 50%;
-  box-shadow: -7px 6px 0 2px rgba(254, 240, 138, 0.92);
-  filter: drop-shadow(0 0 16px rgba(254, 240, 138, 0.7));
   transform: rotate(-25deg);
   z-index: 2;
   pointer-events: none;
@@ -202,15 +200,14 @@ const SERVICES_PAGE_STYLES = `
   gap: 8px;
   padding: 6px 16px;
   border-radius: 999px;
-  background: rgba(56, 189, 248, 0.08);
-  border: 1px solid rgba(56, 189, 248, 0.28);
-  color: #38bdf8;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: #ffffff;
   font-size: 0.82rem;
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   margin-bottom: 22px;
-  box-shadow: 0 0 20px rgba(56, 189, 248, 0.15);
 }
 
 .svc-hero-title {
@@ -221,14 +218,12 @@ const SERVICES_PAGE_STYLES = `
   letter-spacing: -0.025em;
   color: #ffffff;
   margin: 0 0 22px 0;
-  text-shadow: 0 4px 25px rgba(0, 0, 0, 0.85);
 }
 
 .svc-hero-title .accent {
   display: block;
   color: #888FA2;
   font-weight: 800;
-  text-shadow: 0 3px 20px rgba(0, 0, 0, 0.85);
 }
 
 .svc-hero-desc {
@@ -258,7 +253,6 @@ const SERVICES_PAGE_STYLES = `
   font-size: 0.98rem;
   text-decoration: none;
   border: 1px solid rgba(56, 189, 248, 0.45);
-  box-shadow: 0 0 24px rgba(56, 189, 248, 0.25), inset 0 1px 1px rgba(255, 255, 255, 0.2);
   transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
   cursor: pointer;
 }
@@ -266,7 +260,6 @@ const SERVICES_PAGE_STYLES = `
 .svc-btn-primary:hover {
   background: #172a6b;
   border-color: #38bdf8;
-  box-shadow: 0 0 35px rgba(56, 189, 248, 0.45), inset 0 1px 2px rgba(255, 255, 255, 0.4);
   transform: translateY(-2px);
   color: #ffffff;
 }
@@ -310,16 +303,16 @@ const SERVICES_PAGE_STYLES = `
   overflow: hidden;
   background: linear-gradient(180deg, #101a44 0%, #0a112f 60%, #060b1e 100%);
   border: 1px solid rgba(56, 189, 248, 0.2);
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6), 0 0 40px rgba(56, 189, 248, 0.1);
   position: relative;
 }
 
 /* ── Section 2: Cold Chain Advantage (3 Pillars) ── */
 .svc-advantage-sec {
   padding: 90px 24px;
-  background: #060c23;
+  background: #ffffff;
   position: relative;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  border-top: 1px solid #e2e8f0;
+  border-bottom: 1px solid #e2e8f0;
 }
 
 .svc-sec-header {
@@ -332,15 +325,14 @@ const SERVICES_PAGE_STYLES = `
   font-family: var(--display, 'Satoshi', -apple-system, BlinkMacSystemFont, sans-serif);
   font-size: clamp(1.8rem, 3.2vw, 2.6rem);
   font-weight: 700;
-  color: #38bdf8;
+  color: #888FA2;
   margin: 0 0 14px 0;
   letter-spacing: -0.02em;
-  text-shadow: 0 0 25px rgba(56, 189, 248, 0.3);
 }
 
 .svc-advantage-sub {
   font-size: clamp(0.98rem, 1.15vw, 1.08rem);
-  color: rgba(226, 232, 240, 0.72);
+  color: #475569;
   line-height: 1.65;
 }
 
@@ -353,8 +345,8 @@ const SERVICES_PAGE_STYLES = `
 }
 
 .svc-pillar-card {
-  background: rgba(13, 22, 53, 0.7);
-  border: 1px solid rgba(56, 189, 248, 0.14);
+  background: #ffffff;
+  border: 1px solid rgba(7, 15, 48, 0.08);
   border-radius: 20px;
   padding: 36px 28px;
   display: flex;
@@ -363,7 +355,6 @@ const SERVICES_PAGE_STYLES = `
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   position: relative;
   overflow: hidden;
-  backdrop-filter: blur(12px);
 }
 
 .svc-pillar-card::before {
@@ -381,8 +372,7 @@ const SERVICES_PAGE_STYLES = `
 .svc-pillar-card:hover {
   transform: translateY(-6px);
   border-color: rgba(56, 189, 248, 0.38);
-  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.4), 0 0 28px rgba(56, 189, 248, 0.15);
-  background: rgba(17, 28, 68, 0.85);
+  background: #ffffff;
 }
 
 .svc-pillar-card:hover::before {
@@ -398,9 +388,8 @@ const SERVICES_PAGE_STYLES = `
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #38bdf8;
+  color: #888FA2;
   margin-bottom: 24px;
-  box-shadow: 0 0 20px rgba(56, 189, 248, 0.18);
   transition: transform 0.3s ease;
 }
 
@@ -418,14 +407,14 @@ const SERVICES_PAGE_STYLES = `
   font-family: var(--display, 'Satoshi', -apple-system, BlinkMacSystemFont, sans-serif);
   font-size: 1.28rem;
   font-weight: 700;
-  color: #ffffff;
+  color: #071952;
   margin: 0 0 12px 0;
 }
 
 .svc-pillar-desc {
   font-size: 0.94rem;
   line-height: 1.65;
-  color: rgba(203, 213, 225, 0.8);
+  color: #475569;
   margin: 0;
 }
 
@@ -449,13 +438,12 @@ const SERVICES_PAGE_STYLES = `
 
 .svc-const-eyebrow {
   display: inline-block;
-  color: #38bdf8;
+  color: #888FA2;
   font-size: 0.84rem;
   font-weight: 700;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   margin-bottom: 18px;
-  text-shadow: 0 0 16px rgba(56, 189, 248, 0.3);
 }
 
 .svc-const-title {
@@ -492,7 +480,7 @@ const SERVICES_PAGE_STYLES = `
 
 .svc-stat-chip {
   background: rgba(15, 25, 60, 0.6);
-  border: 1px solid rgba(56, 189, 248, 0.16);
+  border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: 14px;
   padding: 14px 18px;
   backdrop-filter: blur(8px);
@@ -502,13 +490,13 @@ const SERVICES_PAGE_STYLES = `
   font-family: var(--display, 'Satoshi', -apple-system, BlinkMacSystemFont, sans-serif);
   font-size: 1.5rem;
   font-weight: 800;
-  color: #38bdf8;
+  color: #ffffff;
   display: block;
 }
 
 .svc-stat-lbl {
   font-size: 0.82rem;
-  color: rgba(203, 213, 225, 0.75);
+  color: rgba(255, 255, 255, 0.85);
   text-transform: uppercase;
   letter-spacing: 0.06em;
   font-weight: 500;
@@ -520,16 +508,28 @@ const SERVICES_PAGE_STYLES = `
   border: 1px solid rgba(56, 189, 248, 0.25);
   border-radius: 28px;
   aspect-ratio: 1 / 1.12;
-  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.65), 0 0 45px rgba(56, 189, 248, 0.12);
   overflow: hidden;
 }
 
 /* ── Section 4: All 6 Cold Chain Services Grid ── */
 .svc-core-sec {
   padding: 100px 24px;
-  background: #060c23;
+  background: #ffffff;
   position: relative;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  border-top: 1px solid #e2e8f0;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.svc-core-sec .svc-hero-title {
+  color: #071952;
+}
+
+.svc-core-sec .svc-hero-title .accent {
+  color: #888FA2;
+}
+
+.svc-core-sec .svc-advantage-sub {
+  color: #475569;
 }
 
 .svc-grid {
@@ -541,8 +541,8 @@ const SERVICES_PAGE_STYLES = `
 }
 
 .svc-card {
-  background: rgba(13, 22, 53, 0.7);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: #ffffff;
+  border: 1px solid rgba(7, 15, 48, 0.08);
   border-radius: 20px;
   overflow: hidden;
   display: flex;
@@ -551,14 +551,12 @@ const SERVICES_PAGE_STYLES = `
   color: inherit;
   transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
   position: relative;
-  backdrop-filter: blur(10px);
   cursor: pointer;
 }
 
 .svc-card:hover {
   transform: translateY(-8px);
   border-color: rgba(56, 189, 248, 0.45);
-  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.55), 0 0 35px rgba(56, 189, 248, 0.2);
 }
 
 .svc-card-img-wrap {
@@ -584,8 +582,8 @@ const SERVICES_PAGE_STYLES = `
   top: 14px;
   left: 14px;
   background: rgba(6, 12, 35, 0.85);
-  border: 1px solid rgba(56, 189, 248, 0.35);
-  color: #38bdf8;
+  border: 1px solid rgba(136, 143, 162, 0.35);
+  color: #888FA2;
   font-family: var(--display, 'Satoshi', sans-serif);
   font-weight: 800;
   font-size: 0.88rem;
@@ -602,8 +600,8 @@ const SERVICES_PAGE_STYLES = `
   height: 32px;
   border-radius: 50%;
   background: rgba(6, 12, 35, 0.85);
-  border: 1px solid rgba(56, 189, 248, 0.35);
-  color: #38bdf8;
+  border: 1px solid rgba(136, 143, 162, 0.35);
+  color: #888FA2;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -612,7 +610,7 @@ const SERVICES_PAGE_STYLES = `
 
 .svc-card:hover .svc-card-arrow-badge {
   transform: translate(2px, -2px);
-  background: #38bdf8;
+  background: #888FA2;
   color: #060c23;
 }
 
@@ -625,7 +623,7 @@ const SERVICES_PAGE_STYLES = `
 
 .svc-card-sub {
   font-size: 0.82rem;
-  color: #38bdf8;
+  color: #888FA2;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.05em;
@@ -636,19 +634,19 @@ const SERVICES_PAGE_STYLES = `
   font-family: var(--display, 'Satoshi', sans-serif);
   font-size: 1.35rem;
   font-weight: 700;
-  color: #ffffff;
+  color: #071952;
   margin: 0 0 12px 0;
   transition: color 0.2s ease;
 }
 
 .svc-card:hover .svc-card-title {
-  color: #38bdf8;
+  color: #888FA2;
 }
 
 .svc-card-desc {
   font-size: 0.92rem;
   line-height: 1.62;
-  color: rgba(203, 213, 225, 0.8);
+  color: #475569;
   margin: 0 0 20px 0;
   flex-grow: 1;
 }
@@ -661,9 +659,9 @@ const SERVICES_PAGE_STYLES = `
 }
 
 .svc-tag {
-  background: rgba(56, 189, 248, 0.06);
-  border: 1px solid rgba(56, 189, 248, 0.2);
-  color: #93c5fd;
+  background: rgba(7, 15, 48, 0.04);
+  border: 1px solid rgba(7, 15, 48, 0.1);
+  color: #334155;
   font-size: 0.78rem;
   font-weight: 500;
   padding: 3px 10px;
@@ -671,14 +669,14 @@ const SERVICES_PAGE_STYLES = `
 }
 
 .svc-card-footer-cta {
-  border-top: 1px solid rgba(255, 255, 255, 0.07);
+  border-top: 1px solid rgba(7, 15, 48, 0.07);
   padding-top: 14px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   font-size: 0.86rem;
   font-weight: 600;
-  color: #38bdf8;
+  color: #888FA2;
 }
 
 /* ── Section 5: Temperature Spectrum Matrix ── */
@@ -718,9 +716,8 @@ const SERVICES_PAGE_STYLES = `
 
 .svc-tab-btn.active {
   background: #0f2358;
-  border-color: #38bdf8;
+  border-color: #888FA2;
   color: #ffffff;
-  box-shadow: 0 0 20px rgba(56, 189, 248, 0.3);
 }
 
 .svc-spectrum-box {
@@ -734,7 +731,6 @@ const SERVICES_PAGE_STYLES = `
   grid-template-columns: 1fr 1fr;
   gap: 40px;
   backdrop-filter: blur(14px);
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
 }
 
 .svc-spec-head-badge {
@@ -787,8 +783,7 @@ const SERVICES_PAGE_STYLES = `
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: #38bdf8;
-  box-shadow: 0 0 8px #38bdf8;
+  background: #888FA2;
 }
 
 .svc-spec-feats-grid {
@@ -830,9 +825,22 @@ const SERVICES_PAGE_STYLES = `
 /* ── Section 6: FAQ Accordion ── */
 .svc-faq-sec {
   padding: 90px 24px;
-  background: #060c23;
+  background: #ffffff;
   position: relative;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  border-top: 1px solid #e2e8f0;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.svc-faq-sec .svc-hero-title {
+  color: #071952;
+}
+
+.svc-faq-sec .svc-hero-title .accent {
+  color: #888FA2;
+}
+
+.svc-faq-sec .svc-advantage-sub {
+  color: #475569;
 }
 
 .svc-faq-list {
@@ -844,17 +852,16 @@ const SERVICES_PAGE_STYLES = `
 }
 
 .svc-faq-item {
-  background: rgba(13, 22, 53, 0.6);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: #ffffff;
+  border: 1px solid rgba(7, 15, 48, 0.08);
   border-radius: 16px;
   overflow: hidden;
   transition: all 0.25s ease;
 }
 
 .svc-faq-item.active {
-  border-color: rgba(56, 189, 248, 0.35);
-  background: rgba(16, 27, 65, 0.85);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  border-color: rgba(56, 189, 248, 0.45);
+  background: #ffffff;
 }
 
 .svc-faq-q {
@@ -871,16 +878,16 @@ const SERVICES_PAGE_STYLES = `
   font-family: var(--display, 'Satoshi', sans-serif);
   font-size: 1.08rem;
   font-weight: 700;
-  color: #ffffff;
+  color: #071952;
 }
 
 .svc-faq-toggle {
   width: 28px;
   height: 28px;
   border-radius: 50%;
-  background: rgba(56, 189, 248, 0.1);
-  border: 1px solid rgba(56, 189, 248, 0.25);
-  color: #38bdf8;
+  background: rgba(7, 15, 48, 0.05);
+  border: 1px solid rgba(7, 15, 48, 0.1);
+  color: #071952;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -892,20 +899,22 @@ const SERVICES_PAGE_STYLES = `
 
 .svc-faq-item.active .svc-faq-toggle {
   transform: rotate(45deg);
-  background: #38bdf8;
-  color: #060c23;
+  background: #888FA2;
+  color: #ffffff;
 }
 
 .svc-faq-a {
   padding: 0 26px 22px 26px;
   font-size: 0.95rem;
   line-height: 1.7;
-  color: rgba(226, 232, 240, 0.82);
+  color: #475569;
 }
 
 /* ── Section 7: Bottom CTA Banner ── */
 .svc-cta-sec {
-  padding: 60px 24px 80px 24px;
+  padding: 80px 24px;
+  background: #060c23;
+  position: relative;
 }
 
 .svc-cta-card {
@@ -914,7 +923,6 @@ const SERVICES_PAGE_STYLES = `
   border-radius: 28px;
   background: radial-gradient(ellipse at 50% 20%, #15225c 0%, #0b1335 70%, #060b20 100%);
   border: 1px solid rgba(56, 189, 248, 0.25);
-  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6), 0 0 40px rgba(56, 189, 248, 0.12);
   padding: 60px 40px;
   text-align: center;
   position: relative;
@@ -1215,7 +1223,6 @@ function StargazerArtwork() {
           <path
             d="M345 58 A15 15 0 0 0 358 75 A13 13 0 1 1 345 58 Z"
             fill="#fff3c4"
-            filter="drop-shadow(0 0 8px rgba(255,243,196,0.8))"
           />
 
           <line x1="255" y1="48" x2="215" y2="60" stroke="rgba(255,255,255,0.75)" strokeWidth="1.5" strokeLinecap="round" />
@@ -1224,7 +1231,7 @@ function StargazerArtwork() {
           <circle cx="95" cy="110" r="1.5" fill="#ffffff" opacity="0.8" />
           <circle cx="140" cy="85" r="2" fill="#ffffff" opacity="0.9" />
           <circle cx="180" cy="130" r="1.5" fill="#a5b4fc" opacity="0.85" />
-          <circle cx="220" cy="95" r="2.2" fill="#ffffff" filter="drop-shadow(0 0 4px #fff)" />
+          <circle cx="220" cy="95" r="2.2" fill="#ffffff" />
           <circle cx="270" cy="140" r="1.8" fill="#38bdf8" opacity="0.9" />
           <circle cx="310" cy="100" r="1.6" fill="#ffffff" opacity="0.75" />
           <circle cx="390" cy="85" r="2" fill="#fef08a" opacity="0.85" />
@@ -1361,7 +1368,7 @@ function ConstellationNetworkArtwork() {
         <line x1="340" y1="200" x2="420" y2="260" stroke="#fef08a" strokeWidth="2.5" opacity="0.85" />
 
         <circle cx="340" cy="200" r="48" fill="url(#starGlow)" />
-        <circle cx="340" cy="200" r="10" fill="#fef08a" filter="drop-shadow(0 0 12px #fef08a)" />
+        <circle cx="340" cy="200" r="10" fill="#fef08a" />
         <circle cx="340" cy="200" r="4" fill="#ffffff" />
 
         {[
@@ -1386,7 +1393,6 @@ function ConstellationNetworkArtwork() {
                 fill={isSelected ? 'rgba(56,189,248,0.25)' : 'rgba(255,255,255,0.1)'}
                 stroke={isSelected ? '#38bdf8' : 'rgba(255,255,255,0.6)'}
                 strokeWidth={isSelected ? 2.5 : 1.5}
-                filter={isSelected ? 'drop-shadow(0 0 10px #38bdf8)' : 'none'}
               />
               <circle cx={cx} cy={cy} r={isSelected ? 5 : 3} fill="#ffffff" />
             </g>
@@ -1428,7 +1434,7 @@ function ConstellationNetworkArtwork() {
           left: '18px',
           right: '18px',
           background: 'rgba(6, 12, 35, 0.88)',
-          border: '1px solid rgba(56, 189, 248, 0.35)',
+          border: '1px solid rgba(255, 255, 255, 0.2)',
           borderRadius: '16px',
           padding: '14px 18px',
           backdropFilter: 'blur(12px)',
@@ -1436,25 +1442,24 @@ function ConstellationNetworkArtwork() {
           alignItems: 'center',
           justifyContent: 'space-between',
           gap: '12px',
-          boxShadow: '0 10px 25px rgba(0,0,0,0.5)',
         }}
       >
         <div>
-          <div style={{ fontSize: '0.72rem', color: '#38bdf8', textTransform: 'uppercase', letterSpacing: '0.08em', fontWeight: 700 }}>
+          <div style={{ fontSize: '0.72rem', color: '#ffffff', textTransform: 'uppercase', letterSpacing: '0.08em', fontWeight: 700 }}>
             Active Constellation Node #{selectedNode.id}
           </div>
           <div style={{ fontSize: '0.98rem', fontWeight: 700, color: '#ffffff' }}>
             {selectedNode.name}
           </div>
-          <div style={{ fontSize: '0.78rem', color: 'rgba(203, 213, 225, 0.75)' }}>
+          <div style={{ fontSize: '0.78rem', color: 'rgba(255, 255, 255, 0.85)' }}>
             {selectedNode.role}
           </div>
         </div>
         <div style={{ textAlign: 'right' }}>
-          <div style={{ fontSize: '0.72rem', color: 'rgba(148, 163, 184, 0.8)', textTransform: 'uppercase' }}>
+          <div style={{ fontSize: '0.72rem', color: 'rgba(255, 255, 255, 0.85)', textTransform: 'uppercase' }}>
             Validated Temp
           </div>
-          <div style={{ fontSize: '1.25rem', fontWeight: 800, color: '#38bdf8', fontFamily: 'var(--display, sans-serif)' }}>
+          <div style={{ fontSize: '1.25rem', fontWeight: 800, color: '#ffffff', fontFamily: 'var(--display, sans-serif)' }}>
             {selectedNode.temp}
           </div>
         </div>
@@ -1597,9 +1602,6 @@ export default function Services() {
       {/* ── 4. ALL 6 CORE SERVICES GRID (With direct links to separate service detail pages) ── */}
       <section className="svc-core-sec" id="services-grid">
         <div className="svc-sec-header">
-          <div className="svc-badge" style={{ marginBottom: 12 }}>
-            Comprehensive Solutions
-          </div>
           <h2 className="svc-hero-title" style={{ fontSize: 'clamp(2rem, 3.2vw, 2.8rem)', marginBottom: 12 }}>
             Cold logistics,
             <span className="accent">end to end.</span>
@@ -1699,7 +1701,7 @@ export default function Services() {
             <div className="svc-spec-items-grid">
               {activeSpectrum.items.map((it, idx) => (
                 <div key={idx} className="svc-spec-item-row">
-                  <span className="svc-spec-item-dot" style={{ background: activeSpectrum.color, boxShadow: `0 0 8px ${activeSpectrum.color}` }} />
+                  <span className="svc-spec-item-dot" style={{ background: activeSpectrum.color }} />
                   <span>{it}</span>
                 </div>
               ))}

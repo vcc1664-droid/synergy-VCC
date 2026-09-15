@@ -249,7 +249,7 @@ export const SERVICES_DATA = [
     img: '/img-supply-chain.webp',
     alt: 'Integrated cold supply chain logistics',
     tempRange: 'Turnkey Supply Chain',
-    capacity: 'Seamless Multi-Node Network',
+    capacity: 'Seamless Multi-Node',
     specs: [
       { label: 'Logistics Design', val: 'Turnkey Custom Architectures' },
       { label: 'Cross-Docking', val: 'Zero-Storage Transit Hub' },

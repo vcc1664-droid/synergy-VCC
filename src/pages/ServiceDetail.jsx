@@ -65,11 +65,11 @@ const SERVICE_DETAIL_STYLES = `
 }
 
 .sd-breadcrumbs a:hover {
-  color: #38bdf8;
+  color: #888FA2;
 }
 
 .sd-breadcrumbs span.curr {
-  color: #38bdf8;
+  color: #888FA2;
   font-weight: 600;
 }
 
@@ -80,9 +80,9 @@ const SERVICE_DETAIL_STYLES = `
   gap: 8px;
   padding: 6px 14px;
   border-radius: 999px;
-  background: rgba(2, 132, 199, 0.08);
-  border: 1px solid rgba(2, 132, 199, 0.25);
-  color: #0284c7;
+  background: rgba(136, 143, 162, 0.08);
+  border: 1px solid rgba(136, 143, 162, 0.25);
+  color: #888FA2;
   font-size: 0.82rem;
   font-weight: 700;
   letter-spacing: 0.12em;
@@ -91,9 +91,9 @@ const SERVICE_DETAIL_STYLES = `
 }
 
 .sd-hero .sd-badge {
-  background: rgba(56, 189, 248, 0.08);
-  border: 1px solid rgba(56, 189, 248, 0.28);
-  color: #38bdf8;
+  background: rgba(136, 143, 162, 0.1);
+  border: 1px solid rgba(136, 143, 162, 0.35);
+  color: #888FA2;
 }
 
 .sd-title {
@@ -108,7 +108,7 @@ const SERVICE_DETAIL_STYLES = `
 
 .sd-title .accent {
   display: block;
-  color: #93c5fd;
+  color: #888FA2;
   font-weight: 800;
 }
 
@@ -134,22 +134,20 @@ const SERVICE_DETAIL_STYLES = `
   justify-content: center;
   padding: 13px 30px;
   border-radius: 999px;
-  background: #38bdf8;
-  color: #070f30;
+  background: #888FA2;
+  color: #ffffff;
   font-weight: 700;
   font-size: 0.96rem;
   text-decoration: none;
-  border: 1px solid rgba(56, 189, 248, 0.8);
-  box-shadow: 0 0 24px rgba(56, 189, 248, 0.35);
+  border: 1px solid rgba(136, 143, 162, 0.8);
   transition: all 0.25s ease;
   cursor: pointer;
 }
 
 .sd-btn-primary:hover {
-  background: #7dd3fc;
-  box-shadow: 0 0 35px rgba(56, 189, 248, 0.5);
+  background: #737a8e;
   transform: translateY(-2px);
-  color: #070f30;
+  color: #ffffff;
 }
 
 .sd-btn-secondary {
@@ -194,7 +192,7 @@ const SERVICE_DETAIL_STYLES = `
 
 .sd-stat-lbl {
   font-size: 0.76rem;
-  color: rgba(203, 213, 225, 0.75);
+  color: rgba(255, 255, 255, 0.85);
   text-transform: uppercase;
   letter-spacing: 0.06em;
   margin-bottom: 4px;
@@ -204,7 +202,7 @@ const SERVICE_DETAIL_STYLES = `
   font-family: var(--display, 'Satoshi', sans-serif);
   font-size: 1.22rem;
   font-weight: 700;
-  color: #38bdf8;
+  color: #ffffff;
 }
 
 /* ── Standard Section Base ── */
@@ -239,7 +237,7 @@ const SERVICE_DETAIL_STYLES = `
 
 .sd-sec-title .accent {
   display: block;
-  color: #64748b;
+  color: #888FA2;
   font-weight: 800;
 }
 
@@ -279,7 +277,6 @@ const SERVICE_DETAIL_STYLES = `
   border-radius: 24px;
   overflow: hidden;
   border: 1px solid rgba(7, 15, 48, 0.08);
-  box-shadow: 0 20px 45px rgba(7, 15, 48, 0.08);
   aspect-ratio: 16 / 11;
 }
 
@@ -294,7 +291,7 @@ const SERVICE_DETAIL_STYLES = `
   bottom: 18px;
   left: 18px;
   background: rgba(7, 15, 48, 0.92);
-  border: 1px solid rgba(56, 189, 248, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 12px;
   padding: 10px 16px;
   backdrop-filter: blur(10px);
@@ -303,7 +300,7 @@ const SERVICE_DETAIL_STYLES = `
 
 .sd-img-badge-lbl {
   font-size: 0.72rem;
-  color: #94a3b8;
+  color: rgba(255, 255, 255, 0.85);
   text-transform: uppercase;
   letter-spacing: 0.05em;
 }
@@ -311,7 +308,7 @@ const SERVICE_DETAIL_STYLES = `
 .sd-img-badge-val {
   font-size: 0.98rem;
   font-weight: 700;
-  color: #38bdf8;
+  color: #ffffff;
 }
 
 /* ── Capabilities Section ── */
@@ -327,25 +324,23 @@ const SERVICE_DETAIL_STYLES = `
   border-radius: 20px;
   padding: 34px 28px;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 20px rgba(7, 15, 48, 0.03);
 }
 
 .sd-cap-card:hover {
   transform: translateY(-5px);
-  border-color: rgba(2, 132, 199, 0.35);
-  box-shadow: 0 16px 36px rgba(7, 15, 48, 0.08), 0 0 20px rgba(2, 132, 199, 0.06);
+  border-color: rgba(136, 143, 162, 0.35);
 }
 
 .sd-cap-icon-box {
   width: 52px;
   height: 52px;
   border-radius: 14px;
-  background: rgba(2, 132, 199, 0.08);
-  border: 1px solid rgba(2, 132, 199, 0.22);
+  background: rgba(136, 143, 162, 0.08);
+  border: 1px solid rgba(136, 143, 162, 0.22);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #0284c7;
+  color: #888FA2;
   margin-bottom: 20px;
   font-size: 1.4rem;
 }
@@ -380,21 +375,19 @@ const SERVICE_DETAIL_STYLES = `
   position: relative;
   display: flex;
   flex-direction: column;
-  box-shadow: 0 4px 18px rgba(7, 15, 48, 0.03);
   transition: all 0.3s ease;
 }
 
 .sd-process-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 14px 30px rgba(7, 15, 48, 0.08);
-  border-color: rgba(2, 132, 199, 0.3);
+  border-color: rgba(136, 143, 162, 0.3);
 }
 
 .sd-process-num {
   font-family: var(--display, 'Satoshi', sans-serif);
   font-size: 2.2rem;
   font-weight: 800;
-  color: #0284c7;
+  color: #888FA2;
   opacity: 0.85;
   margin-bottom: 14px;
 }
@@ -420,7 +413,6 @@ const SERVICE_DETAIL_STYLES = `
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 24px;
   padding: 38px;
-  box-shadow: 0 20px 50px rgba(7, 15, 48, 0.12);
   color: #ffffff;
 }
 
@@ -466,12 +458,10 @@ const SERVICE_DETAIL_STYLES = `
   border-radius: 16px;
   overflow: hidden;
   transition: all 0.25s ease;
-  box-shadow: 0 2px 8px rgba(7, 15, 48, 0.02);
 }
 
 .sd-faq-item.active {
-  border-color: rgba(2, 132, 199, 0.35);
-  box-shadow: 0 8px 24px rgba(7, 15, 48, 0.06);
+  border-color: rgba(136, 143, 162, 0.35);
 }
 
 .sd-faq-q {
@@ -509,9 +499,9 @@ const SERVICE_DETAIL_STYLES = `
 
 .sd-faq-item.active .sd-faq-toggle {
   transform: rotate(45deg);
-  background: #0284c7;
+  background: #888FA2;
   color: #ffffff;
-  border-color: #0284c7;
+  border-color: #888FA2;
 }
 
 .sd-faq-a {
@@ -537,13 +527,11 @@ const SERVICE_DETAIL_STYLES = `
   transition: all 0.3s ease;
   display: flex;
   flex-direction: column;
-  box-shadow: 0 4px 18px rgba(7, 15, 48, 0.03);
 }
 
 .sd-other-card:hover {
   transform: translateY(-5px);
-  border-color: rgba(2, 132, 199, 0.35);
-  box-shadow: 0 16px 36px rgba(7, 15, 48, 0.09);
+  border-color: rgba(136, 143, 162, 0.35);
 }
 
 .sd-other-img {
@@ -558,7 +546,7 @@ const SERVICE_DETAIL_STYLES = `
 
 .sd-other-num {
   font-size: 0.78rem;
-  color: #0284c7;
+  color: #888FA2;
   font-weight: 700;
   margin-bottom: 4px;
 }
@@ -581,7 +569,6 @@ const SERVICE_DETAIL_STYLES = `
   border-radius: 26px;
   background: radial-gradient(ellipse at 50% 20%, #16225a 0%, #070f30 70%, #03081e 100%);
   border: 1px solid rgba(255, 255, 255, 0.12);
-  box-shadow: 0 25px 60px rgba(7, 15, 48, 0.15);
   padding: 56px 36px;
   text-align: center;
   position: relative;
@@ -599,7 +586,7 @@ const SERVICE_DETAIL_STYLES = `
 
 .sd-cta-title .accent {
   display: block;
-  color: #93c5fd;
+  color: #888FA2;
   font-weight: 800;
 }
 
@@ -773,7 +760,7 @@ export default function ServiceDetail() {
                 Service Overview
               </div>
               <h2>
-                Engineered for uncompromising <span style={{ color: '#98A3B3' }}>thermal integrity.</span>
+                Engineered for uncompromising <span style={{ color: '#9BA6B5' }}>thermal integrity.</span>
               </h2>
               {service.overview.map((para, idx) => (
                 <p key={idx}>{para}</p>

@@ -15,9 +15,9 @@ const PILLARS = [
         <circle cx="12" cy="17" r="1.5" fill="currentColor" />
       </svg>
     ),
-    accent: '#38bdf8',
-    gradient: 'linear-gradient(135deg, rgba(56, 189, 248, 0.15) 0%, rgba(37, 99, 235, 0.08) 100%)',
-    borderGlow: 'rgba(56, 189, 248, 0.35)',
+    accent: '#888FA2',
+    gradient: 'linear-gradient(135deg, rgba(136, 143, 162, 0.15) 0%, rgba(136, 143, 162, 0.08) 100%)',
+    borderGlow: 'rgba(136, 143, 162, 0.35)',
   },
   {
     num: '02',
@@ -34,9 +34,9 @@ const PILLARS = [
         <path d="M20 8a6 6 0 0 1 0 8" />
       </svg>
     ),
-    accent: '#38bdf8',
-    gradient: 'linear-gradient(135deg, rgba(56, 189, 248, 0.15) 0%, rgba(37, 99, 235, 0.08) 100%)',
-    borderGlow: 'rgba(56, 189, 248, 0.35)',
+    accent: '#888FA2',
+    gradient: 'linear-gradient(135deg, rgba(136, 143, 162, 0.15) 0%, rgba(136, 143, 162, 0.08) 100%)',
+    borderGlow: 'rgba(136, 143, 162, 0.35)',
   },
   {
     num: '03',
@@ -52,9 +52,9 @@ const PILLARS = [
         <circle cx="18.5" cy="18.5" r="2.5" />
       </svg>
     ),
-    accent: '#38bdf8',
-    gradient: 'linear-gradient(135deg, rgba(56, 189, 248, 0.15) 0%, rgba(37, 99, 235, 0.08) 100%)',
-    borderGlow: 'rgba(56, 189, 248, 0.35)',
+    accent: '#888FA2',
+    gradient: 'linear-gradient(135deg, rgba(136, 143, 162, 0.15) 0%, rgba(136, 143, 162, 0.08) 100%)',
+    borderGlow: 'rgba(136, 143, 162, 0.35)',
   },
 ]
 

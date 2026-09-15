@@ -32,48 +32,7 @@ export default function HomeIntroSection() {
           text-align: center;
         }
 
-        /* ── Top Eyebrow / Badge: ── COLD CHAIN ❄ LOGISTICS ── ── */
-        .cch-eyebrow {
-          display: inline-flex;
-          align-items: center;
-          justify-content: center;
-          gap: 16px;
-          margin-bottom: 22px;
-          font-family: var(--display, 'Satoshi', sans-serif);
-          font-size: clamp(0.78rem, 1.1vw, 0.92rem);
-          font-weight: 700;
-          letter-spacing: 0.28em;
-          text-transform: uppercase;
-          color: #888FA2;
-          user-select: none;
-        }
 
-        .cch-eyebrow-line {
-          width: clamp(40px, 6vw, 75px);
-          height: 1.5px;
-          background: linear-gradient(90deg, transparent, #888FA2);
-          border-radius: 2px;
-        }
-
-        .cch-eyebrow-line.right {
-          background: linear-gradient(90deg, #888FA2, transparent);
-        }
-
-        .cch-snowflake-glow {
-          position: relative;
-          display: inline-flex;
-          align-items: center;
-          justify-content: center;
-          width: 26px;
-          height: 26px;
-          color: #888FA2;
-          animation: cch-pulse 3s ease-in-out infinite alternate;
-        }
-
-        @keyframes cch-pulse {
-          0% { transform: scale(0.97); }
-          100% { transform: scale(1.05); }
-        }
 
         /* ── Main Headline ── */
         .cch-title {
@@ -209,16 +168,7 @@ export default function HomeIntroSection() {
             padding: 55px 16px 70px;
           }
 
-          .cch-eyebrow {
-            gap: 10px;
-            font-size: 0.72rem;
-            letter-spacing: 0.18em;
-            margin-bottom: 16px;
-          }
 
-          .cch-eyebrow-line {
-            width: 28px;
-          }
 
           .cch-title {
             margin-bottom: 14px;
@@ -242,30 +192,7 @@ export default function HomeIntroSection() {
 
       <section className="cold-chain-hero" id="cold-chain-precision">
         <div className="cch-container">
-          {/* ── Top Eyebrow Badge ── */}
-          <div className="cch-eyebrow" aria-label="Cold Chain Logistics">
-            <span className="cch-eyebrow-line" />
-            <span>COLD CHAIN</span>
-            <span className="cch-snowflake-glow" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.1" strokeLinecap="round" strokeLinejoin="round">
-                <line x1="12" y1="2" x2="12" y2="22" />
-                <line x1="2" y1="12" x2="22" y2="12" />
-                <line x1="4.93" y1="4.93" x2="19.07" y2="19.07" />
-                <line x1="19.07" y1="4.93" x2="4.93" y2="19.07" />
-                {/* Chevrons / crystalline accents on tips */}
-                <polyline points="9 3.5 12 6.5 15 3.5" />
-                <polyline points="9 20.5 12 17.5 15 20.5" />
-                <polyline points="3.5 9 6.5 12 3.5 15" />
-                <polyline points="20.5 9 17.5 12 20.5 15" />
-                <polyline points="6 6.5 7.5 8 9 6.5" />
-                <polyline points="18 17.5 16.5 16 15 17.5" />
-                <polyline points="17.5 6 16 7.5 17.5 9" />
-                <polyline points="6.5 18 8 16.5 6.5 15" />
-              </svg>
-            </span>
-            <span>LOGISTICS</span>
-            <span className="cch-eyebrow-line right" />
-          </div>
+
 
           {/* ── Main Heading ── */}
           <h2 className="cch-title">

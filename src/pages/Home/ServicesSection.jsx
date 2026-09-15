@@ -69,7 +69,7 @@ export default function ServicesSection() {
 
   return (
     <section className="sec dark-sec home-svc-section" id="services">
-      {/* Scoped Styles for Overlapping Layered Deck */}
+      {/* 60FPS Hardware-Accelerated Scoped Styles */}
       <style>{`
         .home-svc-section {
           position: relative;
@@ -104,12 +104,15 @@ export default function ServicesSection() {
           align-items: center;
           justify-content: center;
           position: relative;
-          min-height: 520px;
+          min-height: 530px;
           padding: 30px 10px 40px 10px;
         }
 
+        /* Fixed dimensions + GPU hardware transform for silky smooth 60fps */
         .home-deck-card {
           position: relative;
+          width: 250px;
+          flex: 0 0 250px;
           height: 485px;
           border-radius: 28px;
           overflow: hidden;
@@ -121,14 +124,17 @@ export default function ServicesSection() {
           background: #081030;
           border: 3px solid #ffffff;
           box-shadow: 0 16px 40px -10px rgba(0, 0, 0, 0.5);
-          transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1),
-                      box-shadow 0.45s cubic-bezier(0.16, 1, 0.3, 1),
-                      border-color 0.35s ease,
-                      opacity 0.4s ease,
-                      flex 0.45s cubic-bezier(0.16, 1, 0.3, 1),
-                      width 0.45s cubic-bezier(0.16, 1, 0.3, 1);
           cursor: pointer;
           flex-shrink: 0;
+          transform-origin: center bottom;
+          will-change: transform, opacity, box-shadow;
+          backface-visibility: hidden;
+          -webkit-backface-visibility: hidden;
+          transform: translateZ(0);
+          transition: transform 0.38s cubic-bezier(0.2, 0.9, 0.3, 1),
+                      box-shadow 0.38s ease,
+                      opacity 0.38s ease,
+                      border-color 0.3s ease;
         }
 
         .home-deck-card-img {
@@ -139,12 +145,14 @@ export default function ServicesSection() {
           height: 100%;
           object-fit: cover;
           z-index: 1;
-          transition: transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+          will-change: transform;
+          transform: translateZ(0);
+          transition: transform 0.55s cubic-bezier(0.2, 0.9, 0.3, 1);
         }
 
         .home-deck-card:hover .home-deck-card-img,
         .home-deck-card.is-active .home-deck-card-img {
-          transform: scale(1.08);
+          transform: scale(1.07);
         }
 
         .home-deck-card-overlay {
@@ -161,18 +169,7 @@ export default function ServicesSection() {
             #060c23 100%
           );
           z-index: 2;
-          transition: background 0.35s ease;
-        }
-
-        .home-deck-card.is-active .home-deck-card-overlay,
-        .home-deck-card:hover .home-deck-card-overlay {
-          background: linear-gradient(
-            180deg,
-            rgba(6, 12, 35, 0.08) 0%,
-            rgba(6, 12, 35, 0.32) 35%,
-            rgba(6, 12, 35, 0.9) 75%,
-            #060c23 100%
-          );
+          pointer-events: none;
         }
 
         .home-deck-card-top {
@@ -184,13 +181,14 @@ export default function ServicesSection() {
           align-items: center;
           justify-content: space-between;
           z-index: 3;
+          pointer-events: none;
         }
 
         .home-deck-badge {
           display: inline-flex;
           align-items: center;
           gap: 6px;
-          background: rgba(6, 12, 35, 0.8);
+          background: rgba(6, 12, 35, 0.82);
           border: 1px solid rgba(255, 255, 255, 0.28);
           color: #ffffff;
           font-family: var(--display, 'Satoshi', sans-serif);
@@ -198,7 +196,6 @@ export default function ServicesSection() {
           font-size: 0.82rem;
           padding: 5px 12px;
           border-radius: 999px;
-          backdrop-filter: blur(10px);
           letter-spacing: 0.04em;
         }
 
@@ -211,7 +208,7 @@ export default function ServicesSection() {
           width: 36px;
           height: 36px;
           border-radius: 50%;
-          background: rgba(6, 12, 35, 0.8);
+          background: rgba(6, 12, 35, 0.82);
           border: 1px solid rgba(255, 255, 255, 0.28);
           color: #ffffff;
           display: flex;
@@ -219,15 +216,14 @@ export default function ServicesSection() {
           justify-content: center;
           font-size: 0.95rem;
           font-weight: 700;
-          backdrop-filter: blur(10px);
-          transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+          transition: transform 0.3s cubic-bezier(0.2, 0.9, 0.3, 1),
                       background 0.3s ease,
                       border-color 0.3s ease;
         }
 
         .home-deck-card:hover .home-deck-arrow,
         .home-deck-card.is-active .home-deck-arrow {
-          transform: translate(3px, -3px);
+          transform: translate3d(3px, -3px, 0);
           background: #888FA2;
           border-color: #888FA2;
           color: #ffffff;
@@ -298,7 +294,7 @@ export default function ServicesSection() {
 
         .home-deck-card:hover .home-deck-footer-arrow,
         .home-deck-card.is-active .home-deck-footer-arrow {
-          transform: translateX(4px);
+          transform: translate3d(4px, 0, 0);
         }
 
         /* Navigation Controls below the Deck */
@@ -387,6 +383,7 @@ export default function ServicesSection() {
           }
           .home-deck-card {
             width: 100% !important;
+            flex: 0 0 auto !important;
             height: 420px !important;
             margin-left: 0 !important;
             transform: none !important;
@@ -416,13 +413,12 @@ export default function ServicesSection() {
               const isActive = activeIdx === idx
               const dist = Math.abs(idx - activeIdx)
 
-              // Overlapping Layering Properties
+              // Ultra-smooth GPU-accelerated layer transforms
               const zIndex = isActive ? 20 : 15 - dist
-              const scale = isActive ? 1.05 : Math.max(0.88, 1 - dist * 0.035)
+              const scale = isActive ? 1.06 : Math.max(0.9, 1 - dist * 0.03)
               const translateY = isActive ? -18 : 0
-              const opacity = isActive ? 1 : Math.max(0.82, 1 - dist * 0.05)
-              const flexBasis = isActive ? '330px' : '230px'
-              const marginLeft = idx === 0 ? '0px' : '-44px'
+              const opacity = isActive ? 1 : Math.max(0.85, 1 - dist * 0.04)
+              const marginLeft = idx === 0 ? '0px' : '-46px'
 
               return (
                 <Link
@@ -432,14 +428,12 @@ export default function ServicesSection() {
                   style={{
                     zIndex,
                     opacity,
-                    flex: `0 0 ${flexBasis}`,
-                    width: flexBasis,
                     marginLeft,
-                    transform: `translateY(${translateY}px) scale(${scale})`,
+                    transform: `translate3d(0, ${translateY}px, 0) scale(${scale})`,
                     borderColor: isActive ? '#ffffff' : 'rgba(255, 255, 255, 0.85)',
                     boxShadow: isActive
-                      ? '0 30px 65px -12px rgba(0, 0, 0, 0.7)'
-                      : '0 16px 36px -10px rgba(0, 0, 0, 0.45)',
+                      ? '0 28px 65px -12px rgba(0, 0, 0, 0.7)'
+                      : '0 14px 34px -10px rgba(0, 0, 0, 0.45)',
                   }}
                   onMouseEnter={() => setActiveIdx(idx)}
                   onClick={() => setActiveIdx(idx)}
